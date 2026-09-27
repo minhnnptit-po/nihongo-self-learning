@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#F5F2EC">
+<meta name="theme-color" content="#F5F2EC" id="themeColorMeta">
 <title>Luyện tập Nihongo → Romaji</title>
+<script>
+(function(){
+  try{
+    var saved = localStorage.getItem('nihongo-theme');
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = saved || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  }catch(e){}
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
@@ -15,6 +25,11 @@
 <body>
 
 <div class="bg" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i></div>
+
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Chuyển giao diện sáng / tối" title="Sáng / Tối">
+  <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></svg>
+</button>
 
 <p class="copyright-top">Copyrights by Nguyễn Ngọc Minh</p>
 
@@ -45,24 +60,26 @@ gõ romaji.</h1>
 
 <div class="topbar" id="topbar">
   <div class="mode-row" id="modeRow" data-mode="hiragana">
-    <span class="mode-thumb" aria-hidden="true"></span>
+    <span class="mode-thumb" aria-hidden="true"><span class="thumb-fill"></span></span>
     <button class="mode-btn active" data-mode="hiragana" aria-pressed="true"><span class="k" lang="ja">あ</span><span>Hiragana</span></button>
     <button class="mode-btn" data-mode="katakana" aria-pressed="false"><span class="k" lang="ja">ア</span><span>Katakana</span></button>
-    <button class="mode-btn" data-mode="teform" aria-pressed="false"><span class="k" lang="ja">て</span><span>Thể て</span></button>
-    <button class="mode-btn" data-mode="kanji" aria-pressed="false"><span class="k" lang="ja">漢</span><span>Kanji N5</span></button>
+    <button class="mode-btn" data-mode="teform" aria-pressed="false"><span>Thể て</span></button>
+    <button class="mode-btn" data-mode="kanji" aria-pressed="false"><span class="k" lang="ja">漢</span><span>Kanji</span></button>
+    <button class="mode-btn" data-mode="vidu" aria-pressed="false"><span class="k" lang="ja">例</span><span>Ví dụ</span></button>
   </div>
 
   <div class="progress-wrap">
     <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-    <div class="progress-label" id="progressLabel">0 / 204 đã đúng</div>
+    <div class="progress-label" id="progressLabel">0 / 104 đã đúng</div>
   </div>
 
   <div class="controls" id="filterControls">
-    <button class="chip active" data-filter="all">Tất cả (204)</button>
+    <button class="chip active" data-filter="all">Tất cả (104)</button>
     <button class="chip" data-filter="gojuon">Bảng cơ bản (46)</button>
     <button class="chip" data-filter="dakuten">Đục âm/Bán đục (25)</button>
     <button class="chip" data-filter="yoon">Âm ghép Yōon (33)</button>
-    <button class="chip" data-filter="vidu">Ví dụ - Từ vựng (100)</button>
+    <button class="chip" data-filter="vidu">Ví dụ - Từ vựng (200)</button>
+    <button class="chip" data-filter="mix">Kanji + Kana kết hợp (50)</button>
     <button class="chip ghost" id="toggleHide">Ẩn câu đã đúng</button>
     <button class="chip reset" id="resetBtn">Làm lại từ đầu</button>
   </div>
@@ -77,6 +94,7 @@ gõ romaji.</h1>
 <main id="main-hiragana"></main>
 <main id="main-katakana" class="hidden"></main>
 <main id="main-kanji" class="hidden"></main>
+<main id="main-vidu" class="hidden"></main>
 
 <main id="main-teform" class="hidden">
   <section class="section">
