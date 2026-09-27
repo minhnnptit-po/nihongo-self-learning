@@ -164,42 +164,6 @@ const HIRAGANA = {
     ["じゃ",["ja","zya"]],["じゅ",["ju","zyu"]],["じょ",["jo","zyo"]],
     ["びゃ","bya"],["びゅ","byu"],["びょ","byo"],
     ["ぴゃ","pya"],["ぴゅ","pyu"],["ぴょ","pyo"]
-  ],
-  vidu: [
-    ["あい","ai","tình yêu"],["あさ","asa","buổi sáng"],["あめ","ame","mưa"],
-    ["いえ","ie","nhà"],["いす","isu","cái ghế"],["いぬ","inu","con chó"],
-    ["うた","uta","bài hát"],["うみ","umi","biển"],["えき","eki","nhà ga"],
-    ["おかね","okane","tiền"],["おちゃ","ocha","trà"],["おとこ","otoko","đàn ông"],
-    ["おんな","onna","phụ nữ"],["かお","kao","khuôn mặt"],["かさ","kasa","cái ô"],
-    ["かぜ","kaze","gió (cảm cúm)"],["かみ","kami","tóc (giấy)"],["き","ki","cây"],
-    ["くつ","kutsu","giày"],["くも","kumo","mây"],["くるま","kuruma","xe hơi"],
-    ["こえ","koe","giọng nói"],["ことば","kotoba","từ ngữ"],["さかな","sakana","con cá"],
-    ["さくら","sakura","hoa anh đào"],["しお","shio","muối"],["しま","shima","hòn đảo"],
-    ["すし","sushi","sushi"],["たまご","tamago","quả trứng"],["ちから","chikara","sức mạnh"],
-    ["つき","tsuki","mặt trăng"],["とけい","tokei","đồng hồ"],["とり","tori","con chim"],
-    ["なつ","natsu","mùa hè"],["にく","niku","thịt"],["ねこ","neko","con mèo"],
-    ["はな","hana","hoa"],["はる","haru","mùa xuân"],["ひと","hito","con người"],
-    ["ふゆ","fuyu","mùa đông"],["ほし","hoshi","ngôi sao"],["まち","machi","thị trấn"],
-    ["みず","mizu","nước"],["みみ","mimi","lỗ tai"],["むし","mushi","côn trùng"],
-    ["め","me","con mắt"],["やま","yama","núi"],["ゆき","yuki","tuyết"],
-    ["よる","yoru","ban đêm"],["わたし","watashi","tôi"],
-    ["あたま","atama","đầu"],["あに","ani","anh trai"],["あね","ane","chị gái"],
-    ["いもうと","imouto","em gái"],["おとうと","otouto","em trai"],["ちち","chichi","bố"],
-    ["はは","haha","mẹ"],["そふ","sofu","ông"],["そぼ","sobo","bà"],
-    ["かぞく","kazoku","gia đình"],["ともだち","tomodachi","bạn bè"],["せんせい","sensei","giáo viên"],
-    ["がくせい","gakusei","học sinh"],["かいしゃ","kaisha","công ty"],["しごと","shigoto","công việc"],
-    ["でんわ","denwa","điện thoại"],["てがみ","tegami","lá thư"],["きっぷ","kippu","vé xe/tàu"],
-    ["えいが","eiga","phim điện ảnh"],["おんがく","ongaku","âm nhạc"],["しゃしん","shashin","ảnh chụp"],
-    ["にわ","niwa","sân vườn"],["へや","heya","căn phòng"],["まど","mado","cửa sổ"],
-    ["とびら","tobira","cánh cửa"],["かぎ","kagi","chìa khóa"],["はし","hashi","đôi đũa"],
-    ["さら","sara","cái đĩa"],["ちゃわん","chawan","cái bát cơm"],["たべもの","tabemono","đồ ăn"],
-    ["のみもの","nomimono","đồ uống"],["やさい","yasai","rau củ"],["くだもの","kudamono","trái cây"],
-    ["にわとり","niwatori","con gà"],["うし","ushi","con bò"],["うま","uma","con ngựa"],
-    ["ぶた","buta","con lợn"],["ひつじ","hitsuji","con cừu"],["さる","saru","con khỉ"],
-    ["かえる","kaeru","con ếch"],["ちょう","chou","con bướm"],["はち","hachi","con ong"],
-    ["くさ","kusa","cỏ"],["こおり","koori","nước đá"],["ゆびわ","yubiwa","nhẫn đeo tay"],
-    ["ぼうし","boushi","mũ nón"],["くつした","kutsushita","vớ/tất"],["めがね","megane","kính mắt"],
-    ["かばん","kaban","cái cặp"],["つくえ","tsukue","cái bàn học"]
   ]
 };
 
@@ -236,52 +200,6 @@ const KATAKANA = {
     ["ジャ",["ja","zya"]],["ジュ",["ju","zyu"]],["ジョ",["jo","zyo"]],
     ["ビャ","bya"],["ビュ","byu"],["ビョ","byo"],
     ["ピャ","pya"],["ピュ","pyu"],["ピョ","pyo"]
-  ],
-  vidu: [
-    ["アヒル","ahiru","con vịt"],["ライオン","raion","con sư tử"],["ゾウ","zou","con voi"],
-    ["トラ","tora","con hổ"],["キリン","kirin","con hươu cao cổ"],["パンダ","panda","gấu trúc"],
-    ["ラクダ","rakuda","con lạc đà"],["コアラ","koara","gấu koala"],["ペンギン","pengin","chim cánh cụt"],
-    ["カメラ","kamera","máy ảnh"],["テレビ","terebi","ti vi"],["ラジオ","rajio","đài radio"],
-    ["パソコン","pasokon","máy tính cá nhân"],["インターネット",["inta-netto","intaanetto"],"internet"],
-    ["ニュース",["nyu-su","nyuusu"],"tin tức"],["スポーツ",["supo-tsu","supootsu"],"thể thao"],
-    ["サッカー",["sakka-","sakkaa"],"bóng đá"],["テニス","tenisu","quần vợt"],
-    ["ジョギング","jogingu","chạy bộ"],["コーヒー",["ko-hi-","koohii"],"cà phê"],
-    ["ジュース",["ju-su","juusu"],"nước ép"],["パン","pan","bánh mì"],
-    ["ケーキ",["ke-ki","keeki"],"bánh ngọt"],["チョコレート",["chokore-to","chokoreeto"],"sô-cô-la"],
-    ["アイスクリーム",["aisukuri-mu","aisukuriimu"],"kem"],["レストラン","resutoran","nhà hàng"],
-    ["ホテル","hoteru","khách sạn"],["タクシー",["takushi-","takushii"],"taxi"],
-    ["バス","basu","xe buýt"],["タオル","taoru","khăn tắm"],
-    ["シャンプー",["shanpu-","shanpuu"],"dầu gội"],["ソファー",["sofa-","sofaa"],"ghế sofa"],
-    ["カレンダー",["karenda-","karendaa"],"lịch"],["ノート",["no-to","nooto"],"quyển vở"],
-    ["ペン","pen","cây bút"],["ナイフ","naifu","con dao"],
-    ["フォーク",["fo-ku","fooku"],"cái nĩa"],["スプーン",["supu-n","supuun"],"cái thìa"],
-    ["ボタン","botan","cái nút"],["カード",["ka-do","kaado"],"thẻ"],
-    ["チケット","chiketto","vé"],["パーティー",["pa-ti-","paatii"],"bữa tiệc"],
-    ["ダンス","dansu","khiêu vũ"],["ピアノ","piano","đàn piano"],
-    ["ギター",["gita-","gitaa"],"đàn guitar"],["メロン","meron","dưa lưới"],
-    ["レモン","remon","quả chanh vàng"],["トマト","tomato","cà chua"],
-    ["サラダ","sarada","salad"],["ワイン","wain","rượu vang"],
-    ["キツネ","kitsune","con cáo"],["ウサギ","usagi","con thỏ"],["シマウマ","shimauma","ngựa vằn"],
-    ["サイ","sai","con tê giác"],["ワニ","wani","con cá sấu"],["イルカ","iruka","con cá heo"],
-    ["クジラ","kujira","con cá voi"],["ラッコ","rakko","rái cá biển"],["カバ","kaba","hà mã"],
-    ["チーター",["chi-ta-","chiitaa"],"báo săn"],["ジャガー",["jaga-","jagaa"],"báo đốm"],
-    ["ハムスター",["hamusuta-","hamusutaa"],"chuột hamster"],["モルモット","morumotto","chuột lang"],
-    ["オウム","oumu","con vẹt"],["フクロウ","fukurou","cú mèo"],
-    ["コンピューター",["konpyu-ta-","konpyuutaa"],"máy vi tính"],["スマートフォン",["suma-tofon","sumaatofon"],"điện thoại thông minh"],
-    ["テーブル",["te-buru","teeburu"],"cái bàn"],["ベッド","beddo","giường ngủ"],["カーテン",["ka-ten","kaaten"],"rèm cửa"],
-    ["ドア","doa","cửa ra vào"],["マンション","manshon","chung cư cao cấp"],["アパート",["apa-to","apaato"],"nhà chung cư"],
-    ["エレベーター",["erebe-ta-","erebeetaa"],"thang máy"],["エスカレーター",["esukare-ta-","esukareetaa"],"thang cuốn"],
-    ["デパート",["depa-to","depaato"],"trung tâm thương mại"],["スーパー",["su-pa-","suupaa"],"siêu thị"],
-    ["コンビニ","konbini","cửa hàng tiện lợi"],["レジ","reji","quầy thu ngân"],["サイズ","saizu","kích cỡ"],
-    ["カラー",["kara-","karaa"],"màu sắc"],["デザイン","dezain","thiết kế"],["アイデア","aidea","ý tưởng"],
-    ["プレゼント","purezento","quà tặng"],["クリスマス","kurisumasu","Giáng sinh"],["ハロウィン","harowin","lễ hội Halloween"],
-    ["イベント","ibento","sự kiện"],["チーム",["chi-mu","chiimu"],"đội nhóm"],
-    ["リーダー",["ri-da-","riidaa"],"người lãnh đạo"],["ゲーム",["ge-mu","geemu"],"trò chơi"],
-    ["アニメ","anime","phim hoạt hình"],["マンガ","manga","truyện tranh"],
-    ["キャラクター",["kyarakuta-","kyarakutaa"],"nhân vật"],["ロボット","robotto","người máy"],
-    ["ミルク","miruku","sữa"],["バター",["bata-","bataa"],"bơ"],["チーズ",["chi-zu","chiizu"],"phô mai"],
-    ["ヨーグルト",["yo-guruto","yooguruto"],"sữa chua"],["ハンバーガー",["hanba-ga-","hanbaagaa"],"bánh hamburger"],
-    ["ピザ","piza","pizza"]
   ]
 };
 
@@ -422,6 +340,162 @@ const KANJI = {
   ]
 };
 
+/* ===== Ví dụ (mode 5): gộp Hiragana + Katakana, và ví dụ kết hợp Kanji+Hiragana+Katakana ===== */
+const HIRAGANA_VIDU = [
+    ["あい","ai","tình yêu"],["あさ","asa","buổi sáng"],["あめ","ame","mưa"],
+    ["いえ","ie","nhà"],["いす","isu","cái ghế"],["いぬ","inu","con chó"],
+    ["うた","uta","bài hát"],["うみ","umi","biển"],["えき","eki","nhà ga"],
+    ["おかね","okane","tiền"],["おちゃ","ocha","trà"],["おとこ","otoko","đàn ông"],
+    ["おんな","onna","phụ nữ"],["かお","kao","khuôn mặt"],["かさ","kasa","cái ô"],
+    ["かぜ","kaze","gió (cảm cúm)"],["かみ","kami","tóc (giấy)"],["き","ki","cây"],
+    ["くつ","kutsu","giày"],["くも","kumo","mây"],["くるま","kuruma","xe hơi"],
+    ["こえ","koe","giọng nói"],["ことば","kotoba","từ ngữ"],["さかな","sakana","con cá"],
+    ["さくら","sakura","hoa anh đào"],["しお","shio","muối"],["しま","shima","hòn đảo"],
+    ["すし","sushi","sushi"],["たまご","tamago","quả trứng"],["ちから","chikara","sức mạnh"],
+    ["つき","tsuki","mặt trăng"],["とけい","tokei","đồng hồ"],["とり","tori","con chim"],
+    ["なつ","natsu","mùa hè"],["にく","niku","thịt"],["ねこ","neko","con mèo"],
+    ["はな","hana","hoa"],["はる","haru","mùa xuân"],["ひと","hito","con người"],
+    ["ふゆ","fuyu","mùa đông"],["ほし","hoshi","ngôi sao"],["まち","machi","thị trấn"],
+    ["みず","mizu","nước"],["みみ","mimi","lỗ tai"],["むし","mushi","côn trùng"],
+    ["め","me","con mắt"],["やま","yama","núi"],["ゆき","yuki","tuyết"],
+    ["よる","yoru","ban đêm"],["わたし","watashi","tôi"],
+    ["あたま","atama","đầu"],["あに","ani","anh trai"],["あね","ane","chị gái"],
+    ["いもうと","imouto","em gái"],["おとうと","otouto","em trai"],["ちち","chichi","bố"],
+    ["はは","haha","mẹ"],["そふ","sofu","ông"],["そぼ","sobo","bà"],
+    ["かぞく","kazoku","gia đình"],["ともだち","tomodachi","bạn bè"],["せんせい","sensei","giáo viên"],
+    ["がくせい","gakusei","học sinh"],["かいしゃ","kaisha","công ty"],["しごと","shigoto","công việc"],
+    ["でんわ","denwa","điện thoại"],["てがみ","tegami","lá thư"],["きっぷ","kippu","vé xe/tàu"],
+    ["えいが","eiga","phim điện ảnh"],["おんがく","ongaku","âm nhạc"],["しゃしん","shashin","ảnh chụp"],
+    ["にわ","niwa","sân vườn"],["へや","heya","căn phòng"],["まど","mado","cửa sổ"],
+    ["とびら","tobira","cánh cửa"],["かぎ","kagi","chìa khóa"],["はし","hashi","đôi đũa"],
+    ["さら","sara","cái đĩa"],["ちゃわん","chawan","cái bát cơm"],["たべもの","tabemono","đồ ăn"],
+    ["のみもの","nomimono","đồ uống"],["やさい","yasai","rau củ"],["くだもの","kudamono","trái cây"],
+    ["にわとり","niwatori","con gà"],["うし","ushi","con bò"],["うま","uma","con ngựa"],
+    ["ぶた","buta","con lợn"],["ひつじ","hitsuji","con cừu"],["さる","saru","con khỉ"],
+    ["かえる","kaeru","con ếch"],["ちょう","chou","con bướm"],["はち","hachi","con ong"],
+    ["くさ","kusa","cỏ"],["こおり","koori","nước đá"],["ゆびわ","yubiwa","nhẫn đeo tay"],
+    ["ぼうし","boushi","mũ nón"],["くつした","kutsushita","vớ/tất"],["めがね","megane","kính mắt"],
+    ["かばん","kaban","cái cặp"],["つくえ","tsukue","cái bàn học"]
+];
+
+const KATAKANA_VIDU = [
+    ["アヒル","ahiru","con vịt"],["ライオン","raion","con sư tử"],["ゾウ","zou","con voi"],
+    ["トラ","tora","con hổ"],["キリン","kirin","con hươu cao cổ"],["パンダ","panda","gấu trúc"],
+    ["ラクダ","rakuda","con lạc đà"],["コアラ","koara","gấu koala"],["ペンギン","pengin","chim cánh cụt"],
+    ["カメラ","kamera","máy ảnh"],["テレビ","terebi","ti vi"],["ラジオ","rajio","đài radio"],
+    ["パソコン","pasokon","máy tính cá nhân"],["インターネット",["inta-netto","intaanetto"],"internet"],
+    ["ニュース",["nyu-su","nyuusu"],"tin tức"],["スポーツ",["supo-tsu","supootsu"],"thể thao"],
+    ["サッカー",["sakka-","sakkaa"],"bóng đá"],["テニス","tenisu","quần vợt"],
+    ["ジョギング","jogingu","chạy bộ"],["コーヒー",["ko-hi-","koohii"],"cà phê"],
+    ["ジュース",["ju-su","juusu"],"nước ép"],["パン","pan","bánh mì"],
+    ["ケーキ",["ke-ki","keeki"],"bánh ngọt"],["チョコレート",["chokore-to","chokoreeto"],"sô-cô-la"],
+    ["アイスクリーム",["aisukuri-mu","aisukuriimu"],"kem"],["レストラン","resutoran","nhà hàng"],
+    ["ホテル","hoteru","khách sạn"],["タクシー",["takushi-","takushii"],"taxi"],
+    ["バス","basu","xe buýt"],["タオル","taoru","khăn tắm"],
+    ["シャンプー",["shanpu-","shanpuu"],"dầu gội"],["ソファー",["sofa-","sofaa"],"ghế sofa"],
+    ["カレンダー",["karenda-","karendaa"],"lịch"],["ノート",["no-to","nooto"],"quyển vở"],
+    ["ペン","pen","cây bút"],["ナイフ","naifu","con dao"],
+    ["フォーク",["fo-ku","fooku"],"cái nĩa"],["スプーン",["supu-n","supuun"],"cái thìa"],
+    ["ボタン","botan","cái nút"],["カード",["ka-do","kaado"],"thẻ"],
+    ["チケット","chiketto","vé"],["パーティー",["pa-ti-","paatii"],"bữa tiệc"],
+    ["ダンス","dansu","khiêu vũ"],["ピアノ","piano","đàn piano"],
+    ["ギター",["gita-","gitaa"],"đàn guitar"],["メロン","meron","dưa lưới"],
+    ["レモン","remon","quả chanh vàng"],["トマト","tomato","cà chua"],
+    ["サラダ","sarada","salad"],["ワイン","wain","rượu vang"],
+    ["キツネ","kitsune","con cáo"],["ウサギ","usagi","con thỏ"],["シマウマ","shimauma","ngựa vằn"],
+    ["サイ","sai","con tê giác"],["ワニ","wani","con cá sấu"],["イルカ","iruka","con cá heo"],
+    ["クジラ","kujira","con cá voi"],["ラッコ","rakko","rái cá biển"],["カバ","kaba","hà mã"],
+    ["チーター",["chi-ta-","chiitaa"],"báo săn"],["ジャガー",["jaga-","jagaa"],"báo đốm"],
+    ["ハムスター",["hamusuta-","hamusutaa"],"chuột hamster"],["モルモット","morumotto","chuột lang"],
+    ["オウム","oumu","con vẹt"],["フクロウ","fukurou","cú mèo"],
+    ["コンピューター",["konpyu-ta-","konpyuutaa"],"máy vi tính"],["スマートフォン",["suma-tofon","sumaatofon"],"điện thoại thông minh"],
+    ["テーブル",["te-buru","teeburu"],"cái bàn"],["ベッド","beddo","giường ngủ"],["カーテン",["ka-ten","kaaten"],"rèm cửa"],
+    ["ドア","doa","cửa ra vào"],["マンション","manshon","chung cư cao cấp"],["アパート",["apa-to","apaato"],"nhà chung cư"],
+    ["エレベーター",["erebe-ta-","erebeetaa"],"thang máy"],["エスカレーター",["esukare-ta-","esukareetaa"],"thang cuốn"],
+    ["デパート",["depa-to","depaato"],"trung tâm thương mại"],["スーパー",["su-pa-","suupaa"],"siêu thị"],
+    ["コンビニ","konbini","cửa hàng tiện lợi"],["レジ","reji","quầy thu ngân"],["サイズ","saizu","kích cỡ"],
+    ["カラー",["kara-","karaa"],"màu sắc"],["デザイン","dezain","thiết kế"],["アイデア","aidea","ý tưởng"],
+    ["プレゼント","purezento","quà tặng"],["クリスマス","kurisumasu","Giáng sinh"],["ハロウィン","harowin","lễ hội Halloween"],
+    ["イベント","ibento","sự kiện"],["チーム",["chi-mu","chiimu"],"đội nhóm"],
+    ["リーダー",["ri-da-","riidaa"],"người lãnh đạo"],["ゲーム",["ge-mu","geemu"],"trò chơi"],
+    ["アニメ","anime","phim hoạt hình"],["マンガ","manga","truyện tranh"],
+    ["キャラクター",["kyarakuta-","kyarakutaa"],"nhân vật"],["ロボット","robotto","người máy"],
+    ["ミルク","miruku","sữa"],["バター",["bata-","bataa"],"bơ"],["チーズ",["chi-zu","chiizu"],"phô mai"],
+    ["ヨーグルト",["yo-guruto","yooguruto"],"sữa chua"],["ハンバーガー",["hanba-ga-","hanbaagaa"],"bánh hamburger"],
+    ["ピザ","piza","pizza"]
+];
+
+const VIDU_KANA = [...HIRAGANA_VIDU, ...KATAKANA_VIDU];
+
+// Chấp nhận có / không có khoảng trắng giữa các từ, và cả hai cách gõ âm dài katakana (vd: "te-buru" / "teeburu")
+function mixAns(...forms){
+  const set = new Set();
+  forms.forEach(f => {
+    set.add(f);
+    set.add(f.replace(/\s+/g, ''));
+  });
+  return Array.from(set);
+}
+
+// Ví dụ có đủ cả 3 loại chữ trong cùng một cụm: Kanji + Hiragana + Katakana
+const MIX_EXAMPLES = [
+    ["一つのペン", mixAns("hitotsu no pen"), "một cây bút"],
+    ["二つのカード", mixAns("futatsu no ka-do", "futatsu no kaado"), "hai cái thẻ"],
+    ["三つのボタン", mixAns("mittsu no botan"), "ba cái nút"],
+    ["四つのケーキ", mixAns("yottsu no ke-ki", "yottsu no keeki"), "bốn cái bánh ngọt"],
+    ["五つのチケット", mixAns("itsutsu no chiketto"), "năm cái vé"],
+    ["六つのメロン", mixAns("muttsu no meron"), "sáu quả dưa lưới"],
+    ["七つのレモン", mixAns("nanatsu no remon"), "bảy quả chanh"],
+    ["八つのトマト", mixAns("yattsu no tomato"), "tám quả cà chua"],
+    ["九つのタオル", mixAns("kokonotsu no taoru"), "chín cái khăn tắm"],
+    ["新しいカメラ", mixAns("atarashii kamera"), "máy ảnh mới"],
+    ["大きいゾウ", mixAns("ookii zou"), "con voi to"],
+    ["小さいノート", mixAns("chiisai nooto"), "quyển vở nhỏ"],
+    ["高いホテル", mixAns("takai hoteru"), "khách sạn đắt tiền"],
+    ["安いパン", mixAns("yasui pan"), "ổ bánh mì rẻ"],
+    ["白いドア", mixAns("shiroi doa"), "cánh cửa màu trắng"],
+    ["長いソファー", mixAns("nagai sofa-", "nagai sofaa"), "cái ghế sofa dài"],
+    ["古いカレンダー", mixAns("furui karenda-", "furui karendaa"), "quyển lịch cũ"],
+    ["円いテーブル", mixAns("marui te-buru", "marui teeburu"), "cái bàn tròn"],
+    ["多いプレゼント", mixAns("ooi purezento"), "nhiều quà tặng"],
+    ["車のデザイン", mixAns("kuruma no dezain"), "thiết kế xe hơi"],
+    ["山のレストラン", mixAns("yama no resutoran"), "nhà hàng trên núi"],
+    ["川のバス", mixAns("kawa no basu"), "xe buýt ven sông"],
+    ["手のサイズ", mixAns("te no saizu"), "kích cỡ bàn tay"],
+    ["目のカラー", mixAns("me no karaa"), "màu mắt"],
+    ["本のキャラクター", mixAns("hon no kyarakuta-", "hon no kyarakutaa"), "nhân vật trong sách"],
+    ["店のレジ", mixAns("mise no reji"), "quầy thu ngân cửa hàng"],
+    ["年のイベント", mixAns("toshi no ibento"), "sự kiện trong năm"],
+    ["名のカード", mixAns("na no ka-do", "na no kaado"), "tấm thẻ tên"],
+    ["少ないアイデア", mixAns("sukunai aidea"), "ít ý tưởng"],
+    ["何のゲーム", mixAns("nan no ge-mu", "nan no geemu"), "trò chơi gì"],
+    ["右のドア", mixAns("migi no doa"), "cửa bên phải"],
+    ["左のポケット", mixAns("hidari no poketto"), "túi bên trái"],
+    ["東のタワー", mixAns("higashi no tawa-", "higashi no tawaa"), "tòa tháp phía đông"],
+    ["西のビーチ", mixAns("nishi no bi-chi", "nishi no biichi"), "bãi biển phía tây"],
+    ["南のジャングル", mixAns("minami no janguru"), "khu rừng phía nam"],
+    ["北のオーロラ", mixAns("kita no o-rora", "kita no oorora"), "cực quang phía bắc"],
+    ["上のテーブル", mixAns("ue no te-buru", "ue no teeburu"), "cái bàn ở trên"],
+    ["下のカフェ", mixAns("shita no kafe"), "quán cà phê ở tầng dưới"],
+    ["中のプール", mixAns("naka no pu-ru", "naka no puuru"), "hồ bơi bên trong"],
+    ["空のロケット", mixAns("sora no roketto"), "tên lửa bay lên trời"],
+    ["月のツアー", mixAns("tsuki no tsua-", "tsuki no tsuaa"), "tour lên mặt trăng"],
+    ["木のギター", mixAns("ki no gita-", "ki no gitaa"), "đàn guitar gỗ"],
+    ["道のマップ", mixAns("michi no mappu"), "bản đồ đường đi"],
+    ["父のスマートフォン", mixAns("chichi no suma-tofon", "chichi no sumaatofon"), "điện thoại thông minh của bố"],
+    ["母のエプロン", mixAns("haha no epuron"), "tạp dề của mẹ"],
+    ["友のバイク", mixAns("tomo no baiku"), "xe máy của bạn"],
+    ["男のコート", mixAns("otoko no ko-to", "otoko no kooto"), "áo khoác của đàn ông"],
+    ["女のリボン", mixAns("onna no ribon"), "cái nơ của con gái"],
+    ["耳のイヤホン", mixAns("mimi no iyahon"), "tai nghe"],
+    ["口のマスク", mixAns("kuchi no masuku"), "khẩu trang che miệng"]
+];
+
+const VIDU = {
+  vidu: VIDU_KANA,
+  mix: MIX_EXAMPLES
+};
+
 
 /* ==================== Logic chính (thẻ Hiragana / Katakana / Kanji, hero, thanh công cụ) ==================== */
 const GROUP_TITLES = {
@@ -429,6 +503,7 @@ const GROUP_TITLES = {
   dakuten: "Đục âm & Bán đục âm (Dakuten / Handakuten)",
   yoon: "Âm ghép (Yōon)",
   vidu: "Ví dụ - Từ vựng ứng dụng",
+  mix: "Ví dụ kết hợp Kanji + Hiragana + Katakana",
   n5: "102 Hán tự N5 (JLPT)"
 };
 
@@ -436,7 +511,8 @@ const MODES = {
   hiragana: { items: HIRAGANA, mainId: "main-hiragana" },
   katakana: { items: KATAKANA, mainId: "main-katakana" },
   teform:   { items: null,       mainId: "main-teform" },
-  kanji:    { items: KANJI,      mainId: "main-kanji" }
+  kanji:    { items: KANJI,      mainId: "main-kanji" },
+  vidu:     { items: VIDU,       mainId: "main-vidu" }
 };
 
 const countKana = (o) => Object.values(o).reduce((s,g)=>s+g.length,0);
@@ -445,10 +521,11 @@ const MODE_TOTALS = {
   hiragana: countKana(HIRAGANA),
   katakana: countKana(KATAKANA),
   teform: て.length,
-  kanji: countKana(KANJI)
+  kanji: countKana(KANJI),
+  vidu: countKana(VIDU)
 };
-const correctCount = { hiragana: 0, katakana: 0, teform: 0, kanji: 0 };
-const PROGRESS_SUFFIX = { hiragana: "đã đúng", katakana: "đã đúng", teform: "đã làm", kanji: "đã đúng" };
+const correctCount = { hiragana: 0, katakana: 0, teform: 0, kanji: 0, vidu: 0 };
+const PROGRESS_SUFFIX = { hiragana: "đã đúng", katakana: "đã đúng", teform: "đã làm", kanji: "đã đúng", vidu: "đã đúng" };
 let hideCorrect = false;
 let currentFilter = "all";
 let currentMode = "hiragana";
@@ -469,6 +546,39 @@ function makeRevealBtn(){
   b.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
   b.addEventListener("mousedown", (e)=> e.preventDefault()); // bấm nút không làm ô nhập mất focus (tránh tự chấm)
   return b;
+}
+
+// Tách một chuỗi thành từng đoạn Kanji / Hiragana / Katakana liên tiếp, để hiện riêng từng loại chữ (mode Ví dụ, nhóm "mix")
+function scriptTypeOf(ch){
+  const c = ch.codePointAt(0);
+  if(c >= 0x4E00 && c <= 0x9FFF) return "kanji";
+  if(c >= 0x3040 && c <= 0x309F) return "hira";
+  if((c >= 0x30A0 && c <= 0x30FF) || c === 0x30FC) return "kata";
+  return "other";
+}
+function segmentMixedWord(word){
+  const runs = [];
+  let curType = null, cur = "";
+  for(const ch of word){
+    const t = scriptTypeOf(ch);
+    if(t === curType){ cur += ch; }
+    else {
+      if(cur) runs.push([curType, cur]);
+      curType = t; cur = ch;
+    }
+  }
+  if(cur) runs.push([curType, cur]);
+  return runs;
+}
+// Vẽ từng đoạn thành 1 "thẻ" (span) riêng, có màu/khoảng cách riêng cho dễ nhìn
+function renderMixedKana(kanaEl, word){
+  kanaEl.classList.add("mixed-word");
+  segmentMixedWord(word).forEach(([type, text])=>{
+    const seg = document.createElement("span");
+    seg.className = "seg seg-" + type;
+    seg.textContent = text;
+    kanaEl.appendChild(seg);
+  });
 }
 
 function buildSection(mode, key, items){
@@ -518,7 +628,11 @@ function buildSection(mode, key, items){
     const kanaEl = document.createElement("div");
     kanaEl.className = "kana";
     kanaEl.lang = "ja";
-    kanaEl.textContent = kana;
+    if(key === "mix"){
+      renderMixedKana(kanaEl, kana);
+    } else {
+      kanaEl.textContent = kana;
+    }
 
     let meaningEl = null;
     if(meaning){
@@ -619,12 +733,80 @@ function buildSection(mode, key, items){
   document.getElementById(MODES[mode].mainId).appendChild(section);
 }
 
-function updateProgress(){
+const progressShown = { hiragana:0, katakana:0, teform:0, kanji:0, vidu:0 };
+const celebratedModes = new Set();
+let progressAnimId = 0;
+
+// Rắc vài mẩu "pháo giấy" nhỏ quanh thanh tiến độ khi hoàn thành 100% một chế độ
+function celebrateComplete(){
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const rect = progressFill.getBoundingClientRect();
+  if (!rect.width) return;
+  const colors = ["#8B6CFF","#5F9A2E","#D9436A","#9E8CF0","#F1C453"];
+  for(let i = 0; i < 18; i++){
+    const bit = document.createElement("span");
+    bit.className = "confetti-bit";
+    bit.style.left = (rect.left + rect.width * Math.random()) + "px";
+    bit.style.top = (rect.top + rect.height / 2) + "px";
+    bit.style.background = colors[i % colors.length];
+    const angle = Math.random() * Math.PI - Math.PI; // toả lên trên & hai bên
+    const dist = 60 + Math.random() * 90;
+    bit.style.setProperty("--dx", (Math.cos(angle) * dist).toFixed(1) + "px");
+    bit.style.setProperty("--dy", (Math.sin(angle) * dist - 40).toFixed(1) + "px");
+    bit.style.setProperty("--rot", (Math.random() * 360).toFixed(0) + "deg");
+    document.body.appendChild(bit);
+    bit.addEventListener("animationend", () => bit.remove());
+  }
+}
+
+// animate = false: nhảy thẳng tới số mới (dùng khi đổi chế độ, vì đổi hẳn sang bộ số khác)
+// animate = true (mặc định): đếm chạy mượt từ số cũ sang số mới
+function updateProgress(animate = true){
   const total = MODE_TOTALS[currentMode] ?? TOTAL;
   const done = correctCount[currentMode];
   const pct = Math.round((done/total)*100);
   progressFill.style.setProperty("--p", pct);
-  progressLabel.textContent = `${done} / ${total} ${PROGRESS_SUFFIX[currentMode]}`;
+
+  if (pct >= 100 && total > 0 && !celebratedModes.has(currentMode)){
+    celebratedModes.add(currentMode);
+    celebrateComplete();
+  } else if (pct < 100){
+    celebratedModes.delete(currentMode);
+  }
+
+  const reduceMo = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  cancelAnimationFrame(progressAnimId);
+
+  if (reduceMo || !animate){
+    progressShown[currentMode] = done;
+    progressLabel.textContent = `${done} / ${total} ${PROGRESS_SUFFIX[currentMode]}`;
+    return;
+  }
+
+  progressFill.classList.remove("pulse");
+  void progressFill.offsetWidth;
+  progressFill.classList.add("pulse");
+
+  const from = progressShown[currentMode] ?? 0;
+  const to = done;
+  const mode = currentMode;
+  const start = performance.now();
+  const dur = Math.min(480, 140 + Math.abs(to - from) * 26);
+
+  function step(now){
+    const t = Math.min(1, (now - start) / dur);
+    const eased = 1 - Math.pow(1 - t, 3);
+    const shown = Math.round(from + (to - from) * eased);
+    if (mode === currentMode){
+      progressLabel.textContent = `${shown} / ${total} ${PROGRESS_SUFFIX[currentMode]}`;
+    }
+    if (t < 1){
+      progressAnimId = requestAnimationFrame(step);
+    } else {
+      progressShown[mode] = to;
+    }
+  }
+  progressAnimId = requestAnimationFrame(step);
 }
 
 function applyFilters(){
@@ -668,6 +850,11 @@ const HERO = {
     title: "Học Kanji N5,\ngõ âm Hán Việt.",
     sub: `Nhìn chữ Hán, gõ âm Hán Việt rồi nhấn Enter. Có ${countKana(KANJI)} chữ Kanji trình độ N5, kèm âm On/Kun để tham khảo.`,
     steps: ["Nhìn chữ Kanji", "Gõ âm Hán Việt", "Nhấn Enter để kiểm tra"]
+  },
+  vidu: {
+    title: "Ví dụ tổng hợp,\ngõ romaji.",
+    sub: `Từ vựng Hiragana + Katakana gộp chung, và các cụm kết hợp cả Kanji + Hiragana + Katakana. Có ${countKana(VIDU)} thẻ.`,
+    steps: ["Nhìn từ / cụm từ", "Gõ cách đọc bằng romaji", "Nhấn Enter để kiểm tra"]
   }
 };
 
@@ -683,15 +870,32 @@ let orbShown = null;
 function orbPool(mode){
   if(mode === "teform") return [["て", "te"]];
   if(mode === "kanji") return KANJI.n5.map(([k, a]) => [k, Array.isArray(a) ? a[0] : a]);
+  if(mode === "vidu") return [...VIDU_KANA, ...MIX_EXAMPLES].map(([k, a]) => [k, Array.isArray(a) ? a[0] : a]);
   const src = mode === "katakana" ? KATAKANA : HIRAGANA;
   return src.gojuon.map(([k, a]) => [k, Array.isArray(a) ? a[0] : a]);
 }
+// Co chữ trong bong bóng cho vừa khít: đo bề ngang thật của chữ, so với bề ngang an toàn
+// bên trong bong bóng rồi tính hệ số co (chỉ co nhỏ lại, không phóng to hơn cỡ gốc).
+function fitOrbKana(){
+  const holder = orbKana.parentElement; // .orb-content
+  if(!holder) return;
+  orbKana.style.setProperty("--orb-scale", 1); // về cỡ gốc trước khi đo, tránh đo nhầm theo cỡ co lần trước
+  const safeWidth = holder.clientWidth * 0.66;
+  const natural = orbKana.scrollWidth;
+  if(natural > safeWidth && natural > 0){
+    const scale = Math.max(0.18, Math.min(1, safeWidth / natural));
+    orbKana.style.setProperty("--orb-scale", scale.toFixed(3));
+  }
+}
+window.addEventListener("resize", () => { if(orbShown !== null) fitOrbKana(); });
+
 function swapOrb(k, r){
   orbKana.classList.remove("in");
   orbRomaji.classList.remove("in");
   void orbKana.offsetWidth;
   orbKana.textContent = k;
   orbRomaji.textContent = r;
+  fitOrbKana();
   orbShown = k;
   orbKana.classList.add("in");
   orbRomaji.classList.add("in");
@@ -726,7 +930,7 @@ if(!reduceMotion) setInterval(orbNext, 2800);
 
 /* ---------- Chuyển chế độ ---------- */
 const modeRow = document.getElementById("modeRow");
-const MODE_INDEX = { hiragana: 0, katakana: 1, teform: 2, kanji: 3 };
+const MODE_INDEX = { hiragana: 0, katakana: 1, teform: 2, kanji: 3, vidu: 4 };
 const allChip = document.querySelector('#filterControls .chip[data-filter="all"]');
 function updateAllChipLabel(mode){
   if(allChip) allChip.textContent = `Tất cả (${MODE_TOTALS[mode] ?? TOTAL})`;
@@ -745,6 +949,12 @@ document.querySelectorAll("#modeRow .mode-btn").forEach(btn=>{
     btn.setAttribute("aria-pressed", "true");
     modeRow.dataset.mode = btn.dataset.mode;
     modeRow.style.setProperty("--i", MODE_INDEX[btn.dataset.mode]);
+    const thumbFill = modeRow.querySelector(".thumb-fill");
+    if (thumbFill) {
+      thumbFill.classList.remove("squash");
+      void thumbFill.offsetWidth;
+      thumbFill.classList.add("squash");
+    }
 
     const oldMain = document.getElementById(MODES[currentMode].mainId);
     oldMain.classList.add("fade-out");
@@ -756,6 +966,7 @@ document.querySelectorAll("#modeRow .mode-btn").forEach(btn=>{
       currentMode = btn.dataset.mode;
       topbarEl.classList.toggle("mode-teform", currentMode === "teform");
       topbarEl.classList.toggle("mode-kanji", currentMode === "kanji");
+      topbarEl.classList.toggle("mode-vidu", currentMode === "vidu");
       currentFilter = "all";
       document.querySelectorAll("#filterControls .chip[data-filter]").forEach(b=>{
         b.classList.toggle("active", b.dataset.filter === "all");
@@ -768,7 +979,7 @@ document.querySelectorAll("#modeRow .mode-btn").forEach(btn=>{
       newMain.classList.remove("fade-out");
 
       setHero(currentMode, true);
-      updateProgress();
+      updateProgress(false);
       applyFilters();
     }, 220);
   });
@@ -834,14 +1045,42 @@ document.getElementById("resetBtn").addEventListener("click", ()=>{
   updateProgress();
 });
 
-/* ---------- Vệt sáng kính đi theo con trỏ ---------- */
-document.addEventListener("pointermove", (e)=>{
-  const t = e.target.closest && e.target.closest(".card, .tf-row, .topbar");
-  if(!t) return;
-  const r = t.getBoundingClientRect();
-  t.style.setProperty("--mx", (e.clientX - r.left) + "px");
-  t.style.setProperty("--my", (e.clientY - r.top) + "px");
-}, { passive: true });
+/* ---------- Vệt sáng kính đi theo con trỏ (nội suy mỗi khung hình cho mượt, không giật) ---------- */
+(function(){
+  const reduceGlow = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const glowState = new Map(); // element -> {tx,ty (đích), cx,cy (vị trí đang vẽ)}
+  let glowRaf = 0;
+
+  function glowLoop(){
+    glowRaf = 0;
+    let stillMoving = false;
+    glowState.forEach((s, el) => {
+      s.cx += (s.tx - s.cx) * 0.22;
+      s.cy += (s.ty - s.cy) * 0.22;
+      el.style.setProperty("--mx", s.cx.toFixed(1) + "px");
+      el.style.setProperty("--my", s.cy.toFixed(1) + "px");
+      if (Math.abs(s.tx - s.cx) > 0.3 || Math.abs(s.ty - s.cy) > 0.3) stillMoving = true;
+      else glowState.delete(el);
+    });
+    if (stillMoving) glowRaf = requestAnimationFrame(glowLoop);
+  }
+
+  document.addEventListener("pointermove", (e)=>{
+    const t = e.target.closest && e.target.closest(".card, .tf-row, .topbar");
+    if(!t) return;
+    const r = t.getBoundingClientRect();
+    const tx = e.clientX - r.left, ty = e.clientY - r.top;
+    if (reduceGlow){
+      t.style.setProperty("--mx", tx + "px");
+      t.style.setProperty("--my", ty + "px");
+      return;
+    }
+    let s = glowState.get(t);
+    if (!s){ s = { tx, ty, cx: tx, cy: ty }; glowState.set(t, s); }
+    else { s.tx = tx; s.ty = ty; }
+    if (!glowRaf) glowRaf = requestAnimationFrame(glowLoop);
+  }, { passive: true });
+})();
 
 
 /* ==================== Chế độ Thể て ==================== */
@@ -1147,4 +1386,84 @@ document.addEventListener("pointermove", (e)=>{
       hero.style.setProperty('--oy', 0);
     });
   }
+})();
+
+/* ---------- Chuyển giao diện Sáng / Tối (giữ chất liệu kính lỏng) ---------- */
+(() => {
+  const THEME_KEY = 'nihongo-theme';
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  const metaColor = document.getElementById('themeColorMeta');
+  if (!btn) return;
+
+  const colorFor = (t) => (t === 'dark' ? '#100C1E' : '#F5F2EC');
+
+  const applyMeta = (t) => {
+    if (metaColor) metaColor.setAttribute('content', colorFor(t));
+    btn.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+  };
+
+  applyMeta(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
+    applyMeta(next);
+  });
+
+  // Nếu người dùng chưa từng chọn thủ công, theo hệ thống khi hệ thống đổi
+  try {
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    mq.addEventListener('change', (e) => {
+      if (localStorage.getItem(THEME_KEY)) return; // đã chọn thủ công thì không tự đổi nữa
+      const t = e.matches ? 'dark' : 'light';
+      root.setAttribute('data-theme', t);
+      applyMeta(t);
+    });
+  } catch (e) {}
+})();
+
+/* ---------- Nền trôi nhẹ theo con trỏ (song song toàn trang, nội suy mượt) ---------- */
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const bg = document.querySelector('.bg');
+  if (!bg) return;
+  let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
+  function loop(){
+    cx += (tx - cx) * 0.06;
+    cy += (ty - cy) * 0.06;
+    bg.style.transform = `translate3d(${cx.toFixed(2)}px, ${cy.toFixed(2)}px, 0)`;
+    if (Math.abs(tx - cx) > 0.05 || Math.abs(ty - cy) > 0.05){
+      raf = requestAnimationFrame(loop);
+    } else {
+      raf = 0;
+    }
+  }
+  window.addEventListener('pointermove', (e) => {
+    tx = (e.clientX / window.innerWidth - 0.5) * 26;
+    ty = (e.clientY / window.innerHeight - 0.5) * 26;
+    if (!raf) raf = requestAnimationFrame(loop);
+  }, { passive: true });
+})();
+
+/* ---------- Hiệu ứng gợn sóng khi bấm nút, tăng độ "đã tay" cho mọi thao tác ---------- */
+(function(){
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const SEL = '.chip, .mode-btn, .theme-toggle, .shuffle-btn, .reveal-btn, .retry-btn, .tf-redo, .toolbar-toggle';
+  document.addEventListener('pointerdown', (e) => {
+    const btn = e.target.closest && e.target.closest(SEL);
+    if (!btn || btn.disabled) return;
+    const r = btn.getBoundingClientRect();
+    const size = Math.max(r.width, r.height) * 1.3;
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple';
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = (e.clientX - r.left - size / 2) + 'px';
+    ripple.style.top = (e.clientY - r.top - size / 2) + 'px';
+    if (getComputedStyle(btn).position === 'static') btn.style.position = 'relative';
+    btn.style.overflow = 'hidden';
+    btn.appendChild(ripple);
+    ripple.addEventListener('animationend', () => ripple.remove());
+  }, { passive: true });
 })();
