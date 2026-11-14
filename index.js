@@ -230,15 +230,17 @@ function kanjiAns(...readings){
     set.add(r); set.add(stripDiacritics(r));
     const v = toneVariant(r); if(v) set.add(v);
   });
-  return Array.from(set);
+  const out = Array.from(set);
+  out.hv = readings; // giữ nguyên âm Hán Việt gốc (có dấu) để hiện sẵn trên thẻ
+  return out;
 }
 
-const KANJI = {
+const KANJI_RAW = {
   n5: [
     ["一", kanjiAns("nhất"), "Một\nOn: イチ、イツ ・ Kun: ひと（つ）"],
     ["二", kanjiAns("nhị"), "Hai, số hai\nOn: ニ、ジ ・ Kun: ふた（つ）"],
     ["三", kanjiAns("tam"), "Số ba\nOn: サン、ゾウ ・ Kun: みっ(つ)"],
-    ["四", kanjiAns("tứ"), "Số bốn\nOn: シ ・ Kun: よっ(つ)"],
+    ["四", kanjiAns("tứ"), "Số bốn\nOn: シ ・ Kun: よ(つ), よっ(つ), よん"],
     ["五", kanjiAns("ngũ"), "Số năm\nOn: ゴ ・ Kun: いつつ、いつ"],
     ["六", kanjiAns("lục"), "Sáu, số sáu\nOn: ロク、リク ・ Kun: むっつ, むつ, むい"],
     ["七", kanjiAns("thất"), "Số bảy\nOn: シチ ・ Kun: なな(つ)"],
@@ -339,6 +341,112 @@ const KANJI = {
     ["話", kanjiAns("thoại"), "Nói chuyện, câu chuyện\nOn: ワ ・ Kun: はなし, はな(す)"],
   ]
 };
+
+/* ===== Mode Kanji: gõ romaji của âm On / Kun =====
+   Thẻ hiện sẵn: chữ Kanji + âm Hán Việt + nghĩa tiếng Việt.
+   Đáp án = romaji của bất kỳ âm On hoặc Kun nào (tự sinh từ dòng "On: ... ・ Kun: ...").
+   Dòng On/Kun bằng kana chỉ hiện ra khi trả lời đúng (hoặc khi bấm xem đáp án). */
+const KANA_ROMAJI = {
+  あ:"a",い:"i",う:"u",え:"e",お:"o",
+  か:"ka",き:"ki",く:"ku",け:"ke",こ:"ko",
+  さ:"sa",し:"shi",す:"su",せ:"se",そ:"so",
+  た:"ta",ち:"chi",つ:"tsu",て:"te",と:"to",
+  な:"na",に:"ni",ぬ:"nu",ね:"ne",の:"no",
+  は:"ha",ひ:"hi",ふ:"fu",へ:"he",ほ:"ho",
+  ま:"ma",み:"mi",む:"mu",め:"me",も:"mo",
+  や:"ya",ゆ:"yu",よ:"yo",
+  ら:"ra",り:"ri",る:"ru",れ:"re",ろ:"ro",
+  わ:"wa",を:"o",ん:"n",
+  が:"ga",ぎ:"gi",ぐ:"gu",げ:"ge",ご:"go",
+  ざ:"za",じ:"ji",ず:"zu",ぜ:"ze",ぞ:"zo",
+  だ:"da",ぢ:"ji",づ:"zu",で:"de",ど:"do",
+  ば:"ba",び:"bi",ぶ:"bu",べ:"be",ぼ:"bo",
+  ぱ:"pa",ぴ:"pi",ぷ:"pu",ぺ:"pe",ぽ:"po"
+};
+const KANA_SMALL = { "ゃ":"a", "ゅ":"u", "ょ":"o" };
+
+// kana (hiragana hoặc katakana) -> romaji kiểu Hepburn; trả về null nếu có ký tự lạ hoặc kết thúc bằng っ/ッ
+function kanaToRomaji(src){
+  const s = Array.from(src).map(ch => {
+    const c = ch.codePointAt(0);
+    return (c >= 0x30A1 && c <= 0x30F6) ? String.fromCodePoint(c - 0x60) : ch; // katakana -> hiragana
+  });
+  const out = [];
+  let sokuon = false;
+  for(let i = 0; i < s.length; i++){
+    const ch = s[i];
+    if(ch === "っ"){ sokuon = true; continue; }
+    if(ch === "ー"){
+      if(!out.length) return null;
+      out.push(out[out.length - 1].slice(-1));
+      continue;
+    }
+    let r = KANA_ROMAJI[ch];
+    if(!r) return null;
+    const nx = s[i + 1];
+    if(nx && KANA_SMALL[nx] && r.endsWith("i")){
+      const stem = r.slice(0, -1);
+      r = (["sh", "ch", "j"].includes(stem) ? stem : stem + "y") + KANA_SMALL[nx];
+      i++;
+    }
+    if(sokuon){
+      r = (r.startsWith("ch") ? "t" : r[0]) + r;
+      sokuon = false;
+    }
+    out.push(r);
+  }
+  return sokuon ? null : out.join("");
+}
+
+// Một mục kun như "は(やす/える)" -> ["はやす", "はえる"] + phần gốc "は"; "-か" -> "か"; "–" -> bỏ
+function kunTokenForms(tok){
+  tok = tok.trim().replace(/^[-‐–—]+/, "").trim();
+  if(!tok) return [];
+  const m = tok.match(/^([^()（）]*)[(（]([^()（）]*)[)）]?$/);
+  if(!m) return [tok];
+  const stem = m[1].trim();
+  const tails = m[2].split("/").map(t => t.trim()).filter(Boolean);
+  return [stem, ...tails.map(t => stem + t)];
+}
+
+// "On: イチ、イツ ・ Kun: ひと（つ）" -> danh sách romaji (On trước, Kun sau, không trùng)
+function readingsToRomaji(line){
+  const m = line.match(/^On:\s*(.*?)\s*・\s*Kun:\s*(.*)$/);
+  if(!m) return [];
+  const split = (t) => t.split(/[、,，]/).map(x => x.trim()).filter(Boolean);
+  const kana = [
+    ...split(m[1]).flatMap(kunTokenForms),
+    ...split(m[2]).flatMap(kunTokenForms)
+  ];
+  const seen = new Set();
+  kana.forEach(k => { const r = k && kanaToRomaji(k); if(r) seen.add(r); });
+  return Array.from(seen);
+}
+
+// [kanji, [âm Hán Việt], "nghĩa\nOn: ... ・ Kun: ..."] -> [kanji, [romaji...], "Hán Việt: ...\nnghĩa", "On: ... ・ Kun: ..."]
+function toKanjiCard([kanji, hv, info]){
+  const lines = info.split("\n");
+  const readings = lines.slice(1).join("\n");
+  const hvText = (hv.hv || hv).join(" / ").toLocaleUpperCase("vi");
+  return [kanji, readingsToRomaji(readings), `Hán Việt: ${hvText}\n${lines[0]}`, readings];
+}
+const KANJI = { n5: KANJI_RAW.n5.map(toKanjiCard) };
+
+// So khớp romaji cho mode Kanji: bỏ khoảng trắng/dấu ', gộp các kiểu viết (si/shi, tu/tsu, sya/sha...) và nguyên âm kéo dài (ou/oo/uu/ii/ee/aa)
+function kanjiRomajiKey(s){
+  let x = s.normalize("NFC").toLowerCase().trim()
+    .replace(/[āâ]/g, "a").replace(/[īî]/g, "i").replace(/[ūû]/g, "u").replace(/[ēê]/g, "e").replace(/[ōô]/g, "o")
+    .replace(/[\s'’\-]/g, "");
+  [
+    [/sy([auo])/g, "sh$1"], [/cy([auo])/g, "ch$1"], [/ty([auo])/g, "ch$1"],
+    [/zy([auo])/g, "j$1"], [/jy([auo])/g, "j$1"],
+    [/si/g, "shi"], [/ti/g, "chi"], [/tu/g, "tsu"],
+    [/zi/g, "ji"], [/di/g, "ji"], [/du/g, "zu"],
+    [/(^|[^sc])hu/g, "$1fu"], [/wo/g, "o"],
+    [/tch/g, "cch"]
+  ].forEach(([re, rep]) => { x = x.replace(re, rep); });
+  return x.replace(/ou|oo/g, "o").replace(/uu/g, "u").replace(/ii/g, "i").replace(/ee/g, "e").replace(/aa/g, "a");
+}
 
 /* ===== Ví dụ (mode 5): gộp Hiragana + Katakana, và ví dụ kết hợp Kanji+Hiragana+Katakana ===== */
 const HIRAGANA_VIDU = [
@@ -617,8 +725,10 @@ function buildSection(mode, key, items){
   });
 
   items.forEach((item) => {
-    const [kana, answer, meaning] = item;
+    const [kana, answer, meaning, readings] = item;
     const answers = Array.isArray(answer) ? answer : [answer];
+    // mode Kanji: so khớp theo romaji đã chuẩn hoá (si/shi, ou/o...), không so chuỗi thô
+    const answerKeys = mode === "kanji" ? new Set(answers.map(kanjiRomajiKey)) : null;
 
     const card = document.createElement("div");
     card.className = "card";
@@ -639,6 +749,14 @@ function buildSection(mode, key, items){
       meaningEl = document.createElement("div");
       meaningEl.className = "meaning";
       meaningEl.textContent = meaning;
+      if(readings){
+        // âm On/Kun: nằm sẵn trong thẻ nhưng bị CSS ẩn, chỉ hiện khi thẻ .correct / .revealed
+        const rd = document.createElement("div");
+        rd.className = "rd";
+        rd.lang = "ja";
+        rd.textContent = readings;
+        meaningEl.appendChild(rd);
+      }
     }
 
     const input = document.createElement("input");
@@ -647,7 +765,7 @@ function buildSection(mode, key, items){
     input.autocapitalize = "off";
     input.spellcheck = false;
     input.placeholder = "romaji...";
-    input.setAttribute("aria-label", mode === "kanji" ? `Âm Hán Việt của ${kana}` : `Romaji của ${kana}`);
+    input.setAttribute("aria-label", mode === "kanji" ? `Romaji âm On hoặc Kun của ${kana}` : `Romaji của ${kana}`);
 
     const fb = document.createElement("div");
     fb.className = "fb";
@@ -676,7 +794,8 @@ function buildSection(mode, key, items){
       if(card.classList.contains("correct") || card.classList.contains("revealed")) return;
       const val = normalize(input.value);
       if(!val) return;
-      if(answers.map(normalize).includes(val)){
+      const ok = answerKeys ? answerKeys.has(kanjiRomajiKey(val)) : answers.map(normalize).includes(val);
+      if(ok){
         card.classList.remove("wrong");
         card.classList.add("correct");
         fb.textContent = "tạm";
@@ -847,9 +966,9 @@ const HERO = {
     steps: ["Nhìn động từ thể ます", "Gõ romaji của thể て", "Nhấn Enter, chưa nhớ thì xem đáp án"]
   },
   kanji: {
-    title: "Học Kanji N5,\ngõ âm Hán Việt.",
-    sub: `Nhìn chữ Hán, gõ âm Hán Việt rồi nhấn Enter. Có ${countKana(KANJI)} chữ Kanji trình độ N5, kèm âm On/Kun để tham khảo.`,
-    steps: ["Nhìn chữ Kanji", "Gõ âm Hán Việt", "Nhấn Enter để kiểm tra"]
+    title: "Học Kanji N5,\ngõ cách đọc romaji.",
+    sub: `Nhìn chữ Hán kèm âm Hán Việt và nghĩa, gõ cách đọc bằng romaji (âm On hoặc Kun đều được) rồi nhấn Enter. Có ${countKana(KANJI)} chữ Kanji trình độ N5; âm On/Kun chỉ hiện ra khi bạn trả lời đúng.`,
+    steps: ["Nhìn chữ Kanji, âm Hán Việt và nghĩa", "Gõ romaji của âm On hoặc Kun", "Nhấn Enter, đúng thì hiện âm On/Kun"]
   },
   vidu: {
     title: "Ví dụ tổng hợp,\ngõ romaji.",
@@ -879,15 +998,22 @@ function orbPool(mode){
 function fitOrbKana(){
   const holder = orbKana.parentElement; // .orb-content
   if(!holder) return;
-  orbKana.style.setProperty("--orb-scale", 1); // về cỡ gốc trước khi đo, tránh đo nhầm theo cỡ co lần trước
+  // Tắt transition khi đo: font-size có transition .25s nên nếu không tắt, lúc đo chữ vẫn đang ở cỡ cũ
+  // (đã co nhỏ từ chữ trước) => đo ra "vừa" => không co, rồi chữ mới phình to tràn khỏi bong bóng.
+  const prevTransition = orbKana.style.transition;
+  orbKana.style.transition = "none";
+  orbKana.style.setProperty("--orb-scale", 1); // về cỡ gốc trước khi đo
   const safeWidth = holder.clientWidth * 0.66;
   const natural = orbKana.scrollWidth;
-  if(natural > safeWidth && natural > 0){
-    const scale = Math.max(0.18, Math.min(1, safeWidth / natural));
-    orbKana.style.setProperty("--orb-scale", scale.toFixed(3));
-  }
+  let scale = 1;
+  if(natural > safeWidth && natural > 0) scale = Math.max(0.1, Math.min(1, safeWidth / natural));
+  orbKana.style.setProperty("--orb-scale", scale.toFixed(3));
+  void orbKana.offsetWidth; // chốt cỡ mới rồi mới bật lại transition
+  orbKana.style.transition = prevTransition;
 }
 window.addEventListener("resize", () => { if(orbShown !== null) fitOrbKana(); });
+// font Nhật tải xong có thể làm bề ngang chữ đổi => co lại một lần nữa cho chắc
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(() => { if(orbShown !== null) fitOrbKana(); });
 
 function swapOrb(k, r){
   orbKana.classList.remove("in");
@@ -1396,7 +1522,7 @@ document.getElementById("resetBtn").addEventListener("click", ()=>{
   const metaColor = document.getElementById('themeColorMeta');
   if (!btn) return;
 
-  const colorFor = (t) => (t === 'dark' ? '#100C1E' : '#F5F2EC');
+  const colorFor = (t) => (t === 'dark' ? '#2A2250' : '#F5F2EC');
 
   const applyMeta = (t) => {
     if (metaColor) metaColor.setAttribute('content', colorFor(t));
