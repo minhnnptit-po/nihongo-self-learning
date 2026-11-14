@@ -52,39 +52,40 @@
 /* ========== Giao diện tối: đổi bảng màu, vẫn giữ chất kính lỏng (glass) ========== */
 html[data-theme="dark"]{
   color-scheme:dark;
-  --void:#100C1E;
-  --void-2:#171029;
-  --text:#EDEAF6;
-  --text-2:#B7B1D6;
-  --text-3:#8A84AC;
-  --metal-1:#F1EEFB;
-  --metal-2:#C9C3E6;
-  --metal-3:#948DBF;
-  --line:rgba(255,255,255,.14);
-  --line-strong:rgba(255,255,255,.26);
+  --void:#2A2250;
+  --void-2:#322A5E;
+  --text:#F4F2FB;
+  --text-2:#D3CEEE;
+  --text-3:#A9A3CF;
+  --metal-1:#F8F6FE;
+  --metal-2:#D9D4F0;
+  --metal-3:#A59FCC;
+  --line:rgba(255,255,255,.22);
+  --line-strong:rgba(255,255,255,.38);
 
-  --glass:linear-gradient(155deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
-  --glass-strong:linear-gradient(155deg, rgba(255,255,255,.16), rgba(255,255,255,.05));
-  --spec:inset 0 1.5px 0 rgba(255,255,255,.28), inset 0 0 0 1px rgba(255,255,255,.08), inset 0 -18px 30px rgba(0,0,0,.3), inset 0 14px 24px -10px rgba(0,0,0,.35);
-  --shadow-1:0 8px 22px rgba(0,0,0,.45);
-  --shadow-2:0 22px 48px rgba(0,0,0,.55);
+  --glass:linear-gradient(155deg, rgba(255,255,255,.17), rgba(255,255,255,.08));
+  --glass-strong:linear-gradient(155deg, rgba(255,255,255,.24), rgba(255,255,255,.11));
+  --spec:inset 0 1.5px 0 rgba(255,255,255,.34), inset 0 0 0 1px rgba(255,255,255,.1), inset 0 -18px 30px rgba(0,0,0,.14), inset 0 14px 24px -10px rgba(0,0,0,.16);
+  --shadow-1:0 8px 22px rgba(10,6,30,.32);
+  --shadow-2:0 22px 48px rgba(10,6,30,.42);
 
-  --blob-violet:rgba(139,108,255,.4);
-  --blob-matcha:rgba(140,214,90,.26);
-  --blob-rose:rgba(255,111,160,.22);
-  --blob-blue:rgba(95,184,255,.22);
+  --blob-violet:rgba(150,124,255,.55);
+  --blob-matcha:rgba(140,214,90,.3);
+  --blob-rose:rgba(255,111,160,.3);
+  --blob-blue:rgba(95,184,255,.3);
 
-  --track:rgba(0,0,0,.3);
-  --track-strong:rgba(0,0,0,.4);
-  --recess:rgba(0,0,0,.22);
-  --recess-strong:rgba(0,0,0,.32);
-  --hi:rgba(255,255,255,.1);
-  --hi-strong:rgba(255,255,255,.16);
-  --divider:rgba(255,255,255,.14);
-  --bg-overlay:rgba(8,6,16,.5);
+  --track:rgba(0,0,0,.2);
+  --track-strong:rgba(0,0,0,.3);
+  --recess:rgba(10,6,34,.24);
+  --recess-strong:rgba(10,6,34,.34);
+  --hi:rgba(255,255,255,.14);
+  --hi-strong:rgba(255,255,255,.2);
+  --divider:rgba(255,255,255,.2);
+  --bg-overlay:rgba(20,14,44,.2);
 }
 html{transition:background .4s var(--ease);}
 html[data-theme="dark"] .copyright-top{color:var(--metal-1);}
+html[data-theme="dark"] .card.correct{opacity:.85;}
 html[data-theme="dark"] .card.correct .kana,
 html[data-theme="dark"] .card.correct .fb,
 html[data-theme="dark"] .tf-row.correct .tf-fb{filter:brightness(1.15);}
@@ -742,6 +743,10 @@ main > .section:first-child{margin-top:0;}
   line-height:1.3;
   white-space:pre-line;
 }
+/* Mode Kanji: âm On/Kun chỉ hiện khi trả lời đúng (hoặc bấm xem đáp án) */
+.card .meaning .rd{display:none;}
+.card.correct .meaning .rd,
+.card.revealed .meaning .rd{display:block;}
 .card input,
 .tf-row input{
   width:100%;
