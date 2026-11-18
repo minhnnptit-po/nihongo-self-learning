@@ -1,347 +1,3 @@
-const て = [
-["おきます","thức dậy","おきて","okite"],
-["やすみます","","やすんで","yasunde"],
-["はたらきます","","はたらいて","hataraite"],
-["勉強します","","べんきょうして","benkyoushite"],
-["かいます","","かって","katte"],
-["のみます","","のんで","nonde"],
-["すいます","","すって","sutte"],
-["みます","","みて","mite"],
-["ききます","","きいて","kiite"],
-["散歩します","","さんぽして","sanposhite"],
-["かきます","","かいて","kaite"],
-["とります","","とって","totte"],
-["あいます","","あって","atte"],
-["します","","して","shite"],
-["きります","","きって","kitte"],
-["おくります","","おくって","okutte"],
-["あげます","","あげて","agete"],
-["もらいます","","もらって","moratte"],
-["かします","","かして","kashite"],
-["きます","đến","きて","kite"],
-["食事します","","しょくじして","shokujishite"],
-["おしえます","","おしえて","oshiete"],
-["ならいます","","ならって","naratte"],
-["かけます","","かけて","kakete"],
-["かえります","","かえって","kaette"],
-["わかります","","わかって","wakatte"],
-["あります","","あって","atte"],
-["います","","いて","ite"],
-["出張します","","しゅっちょうして","shutchoushite"],
-["あそびます","","あそんで","asonde"],
-["うります","","うって","utte"],
-["しります","","しって","shitte"],
-["すみます","","すんで","sunde"],
-["研究します","","けんきゅうして","kenkyuushite"],
-["のります","","のって","notte"],
-["おります","","おりて","orite"],
-["のりかえます","","のりかえて","norikaete"],
-["あびます","","あびて","abite"],
-["残業します","","ざんぎょうして","zangyoushite"],
-["わすれます","","わすれて","wasurete"],
-["なくします","","なくして","nakushite"],
-["はらいます","","はらって","haratte"],
-["かえします","","かえして","kaeshite"],
-["予約します","","よやくして","yoyakushite"],
-["あらいます","","あらって","aratte"],
-["ひきます","","ひいて","hiite"],
-["うたいます","","うたって","utatte"],
-["あつめます","","あつめて","atsumete"],
-["すてます","","すてて","sutete"],
-["かえます","","かえて","kaete"],
-["いそぎます","","いそいで","isoide"],
-["しらべます","","しらべて","shirabete"],
-["修理します","","しゅうりして","shuurishite"],
-["おもいます","","おもって","omotte"],
-["いいます","","いって","itte"],
-["かちます","","かって","katte"],
-["まけます","","まけて","makete"],
-["役に立ちます","","やくにたって","yakunitatte"],
-["うごきます","","うごいて","ugoite"],
-["やめます","","やめて","yamete"],
-["きをつけます","","きをつけて","kiwotsukete"],
-["留学します","","りゅうがくして","ryuugakushite"],
-["はきます","","はいて","haite"],
-["かぶります","","かぶって","kabutte"],
-["うまれます","","うまれて","umarete"],
-["まわします","","まわして","mawashite"],
-["およぎます","","およいで","oyoide"],
-["むかえます","","むかえて","mukaete"],
-["きます","mặc","きて","kite"],
-["つかれます","","つかれて","tsukarete"],
-["結婚します","","けっこんして","kekkonshite"],
-["買い物します","","かいものして","kaimonoshite"],
-["たべます","","たべて","tabete"],
-["かります","","かりて","karite"],
-["はなします","","はなして","hanashite"],
-["はいります","","はいって","haitte"],
-["つけます","","つけて","tsukete"],
-["あけます","","あけて","akete"],
-["けします","","けして","keshite"],
-["しめます","","しめて","shimete"],
-["のぼります","","のぼって","nobotte"],
-["まちます","","まって","matte"],
-["てつだいます","","てつだって","tetsudatte"],
-["つかいます","","つかって","tsukatte"],
-["みせます","","みせて","misete"],
-["すわります","","すわって","suwatte"],
-["ねます","","ねて","nete"],
-["たちます","","たって","tatte"],
-["でます","","でて","dete"],
-["ふります","","ふって","futte"],
-["コピーします","","コピーして","kopishite"],
-["つくります","","つくって","tsukutte"],
-["おわります","","おわって","owatte"],
-["とまります","","とまって","tomatte"],
-["いれます","","いれて","irete"],
-["だします","","だして","dashite"],
-["おろします","","おろして","oroshite"],
-["おします","","おして","oshite"],
-["はじめます","","はじめて","hajimete"],
-["見学します","","けんがくして","kengakushite"],
-["電話します","","でんわして","denwashite"],
-["でかけます","","でかけて","dekakete"],
-["ぬぎます","","ぬいで","nuide"],
-["もっていきます","","もっていって","motteitte"],
-["心配します","","しんぱいして","shinpaishite"],
-["おぼえます","","おぼえて","oboete"],
-["かかります","","かかって","kakatte"],
-["おきます","đặt, để","おいて","oite"],
-["洗濯します","","せんたくして","sentakushite"],
-["なります","","なって","natte"],
-["練習します","","れんしゅうして","renshuushite"],
-["運転します","","うんてんして","untenshite"],
-["できます","","できて","dekite"],
-["いります","","いって","itte"],
-["掃除します","","そうじして","soujishite"],
-["さわります","","さわって","sawatte"],
-["あるきます","","あるいて","aruite"],
-["わたします","","わたして","watashite"],
-["くれます","","くれて","kurete"],
-["なおします","","なおして","naoshite"],
-["つれてきます","","つれてきて","tsuretekite"],
-["案内します","","あんないして","annaishite"],
-["かんがえます","","かんがえて","kangaete"],
-["つきます","","ついて","tsuite"],
-["たります","","たりて","tarite"],
-["説明します","","せつめいして","setsumeishite"],
-["がんばります","","がんばって","ganbatte"],
-["かえます","","かえて","kaete"],
-["まがります","","まがって","magatte"],
-["つれていきます","","つれていって","tsureteitte"]
-];
-
-const HIRAGANA = {
-  gojuon: [
-    ["あ","a"],["い","i"],["う","u"],["え","e"],["お","o"],
-    ["か","ka"],["き","ki"],["く","ku"],["け","ke"],["こ","ko"],
-    ["さ","sa"],["し",["shi","si"]],["す","su"],["せ","se"],["そ","so"],
-    ["た","ta"],["ち",["chi","ti"]],["つ",["tsu","tu"]],["て","te"],["と","to"],
-    ["な","na"],["に","ni"],["ぬ","nu"],["ね","ne"],["の","no"],
-    ["は","ha"],["ひ","hi"],["ふ",["fu","hu"]],["へ","he"],["ほ","ho"],
-    ["ま","ma"],["み","mi"],["む","mu"],["め","me"],["も","mo"],
-    ["や","ya"],["ゆ","yu"],["よ","yo"],
-    ["ら","ra"],["り","ri"],["る","ru"],["れ","re"],["ろ","ro"],
-    ["わ","wa"],["を",["wo","o"]],
-    ["ん","n"]
-  ],
-  dakuten: [
-    ["が","ga"],["ぎ","gi"],["ぐ","gu"],["げ","ge"],["ご","go"],
-    ["ざ","za"],["じ",["ji","zi"]],["ず","zu"],["ぜ","ze"],["ぞ","zo"],
-    ["だ","da"],["ぢ",["ji","di"]],["づ",["zu","du"]],["で","de"],["ど","do"],
-    ["ば","ba"],["び","bi"],["ぶ","bu"],["べ","be"],["ぼ","bo"],
-    ["ぱ","pa"],["ぴ","pi"],["ぷ","pu"],["ぺ","pe"],["ぽ","po"]
-  ],
-  yoon: [
-    ["きゃ","kya"],["きゅ","kyu"],["きょ","kyo"],
-    ["しゃ",["sha","sya"]],["しゅ",["shu","syu"]],["しょ",["sho","syo"]],
-    ["ちゃ",["cha","tya"]],["ちゅ",["chu","tyu"]],["ちょ",["cho","tyo"]],
-    ["にゃ","nya"],["にゅ","nyu"],["にょ","nyo"],
-    ["ひゃ","hya"],["ひゅ","hyu"],["ひょ","hyo"],
-    ["みゃ","mya"],["みゅ","myu"],["みょ","myo"],
-    ["りゃ","rya"],["りゅ","ryu"],["りょ","ryo"],
-    ["ぎゃ","gya"],["ぎゅ","gyu"],["ぎょ","gyo"],
-    ["じゃ",["ja","zya"]],["じゅ",["ju","zyu"]],["じょ",["jo","zyo"]],
-    ["びゃ","bya"],["びゅ","byu"],["びょ","byo"],
-    ["ぴゃ","pya"],["ぴゅ","pyu"],["ぴょ","pyo"]
-  ]
-};
-
-const KATAKANA = {
-  gojuon: [
-    ["ア","a"],["イ","i"],["ウ","u"],["エ","e"],["オ","o"],
-    ["カ","ka"],["キ","ki"],["ク","ku"],["ケ","ke"],["コ","ko"],
-    ["サ","sa"],["シ",["shi","si"]],["ス","su"],["セ","se"],["ソ","so"],
-    ["タ","ta"],["チ",["chi","ti"]],["ツ",["tsu","tu"]],["テ","te"],["ト","to"],
-    ["ナ","na"],["ニ","ni"],["ヌ","nu"],["ネ","ne"],["ノ","no"],
-    ["ハ","ha"],["ヒ","hi"],["フ",["fu","hu"]],["ヘ","he"],["ホ","ho"],
-    ["マ","ma"],["ミ","mi"],["ム","mu"],["メ","me"],["モ","mo"],
-    ["ヤ","ya"],["ユ","yu"],["ヨ","yo"],
-    ["ラ","ra"],["リ","ri"],["ル","ru"],["レ","re"],["ロ","ro"],
-    ["ワ","wa"],["ヲ",["wo","o"]],
-    ["ン","n"]
-  ],
-  dakuten: [
-    ["ガ","ga"],["ギ","gi"],["グ","gu"],["ゲ","ge"],["ゴ","go"],
-    ["ザ","za"],["ジ",["ji","zi"]],["ズ","zu"],["ゼ","ze"],["ゾ","zo"],
-    ["ダ","da"],["ヂ",["ji","di"]],["ヅ",["zu","du"]],["デ","de"],["ド","do"],
-    ["バ","ba"],["ビ","bi"],["ブ","bu"],["ベ","be"],["ボ","bo"],
-    ["パ","pa"],["ピ","pi"],["プ","pu"],["ペ","pe"],["ポ","po"]
-  ],
-  yoon: [
-    ["キャ","kya"],["キュ","kyu"],["キョ","kyo"],
-    ["シャ",["sha","sya"]],["シュ",["shu","syu"]],["ショ",["sho","syo"]],
-    ["チャ",["cha","tya"]],["チュ",["chu","tyu"]],["チョ",["cho","tyo"]],
-    ["ニャ","nya"],["ニュ","nyu"],["ニョ","nyo"],
-    ["ヒャ","hya"],["ヒュ","hyu"],["ヒョ","hyo"],
-    ["ミャ","mya"],["ミュ","myu"],["ミョ","myo"],
-    ["リャ","rya"],["リュ","ryu"],["リョ","ryo"],
-    ["ギャ","gya"],["ギュ","gyu"],["ギョ","gyo"],
-    ["ジャ",["ja","zya"]],["ジュ",["ju","zyu"]],["ジョ",["jo","zyo"]],
-    ["ビャ","bya"],["ビュ","byu"],["ビョ","byo"],
-    ["ピャ","pya"],["ピュ","pyu"],["ピョ","pyo"]
-  ]
-};
-
-/* ===== Kanji N5 (mode 4) ===== */
-function stripDiacritics(s){
-  return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d').replace(/Đ/g,'D');
-}
-// Chấp nhận cả hai cách đặt dấu: hỏa/hoả, hòa/hoà, thúy/thuý...
-function toneVariant(r){
-  const T = /[\u0300\u0301\u0309\u0303\u0323]/;
-  const arr = Array.from(r.normalize('NFC'));
-  let changed = false;
-  for(let i = 0; i < arr.length - 1; i++){
-    const a = arr[i].normalize('NFD'), b = arr[i + 1].normalize('NFD');
-    if(!['oa', 'oe', 'uy'].includes(a[0].toLowerCase() + b[0].toLowerCase())) continue;
-    if(a[0].toLowerCase() === 'u' && arr[i - 1] && arr[i - 1].toLowerCase() === 'q') continue;
-    const ta = a.length === 2 && T.test(a[1]) ? a[1] : '';
-    const tb = b.length === 2 && T.test(b[1]) ? b[1] : '';
-    if(a.length > (ta ? 2 : 1) || b.length > (tb ? 2 : 1)) continue;
-    if(ta && !tb){ arr[i] = a[0]; arr[i + 1] = (b[0] + ta).normalize('NFC'); changed = true; }
-    else if(tb && !ta){ arr[i] = (a[0] + tb).normalize('NFC'); arr[i + 1] = b[0]; changed = true; }
-  }
-  return changed ? arr.join('') : null;
-}
-function kanjiAns(...readings){
-  const set = new Set();
-  readings.forEach(r => {
-    set.add(r); set.add(stripDiacritics(r));
-    const v = toneVariant(r); if(v) set.add(v);
-  });
-  const out = Array.from(set);
-  out.hv = readings; // giữ nguyên âm Hán Việt gốc (có dấu) để hiện sẵn trên thẻ
-  return out;
-}
-
-const KANJI_RAW = {
-  n5: [
-    ["一", kanjiAns("nhất"), "Một\nOn: イチ、イツ ・ Kun: ひと（つ）"],
-    ["二", kanjiAns("nhị"), "Hai, số hai\nOn: ニ、ジ ・ Kun: ふた（つ）"],
-    ["三", kanjiAns("tam"), "Số ba\nOn: サン、ゾウ ・ Kun: みっ(つ)"],
-    ["四", kanjiAns("tứ"), "Số bốn\nOn: シ ・ Kun: よ(つ), よっ(つ), よん"],
-    ["五", kanjiAns("ngũ"), "Số năm\nOn: ゴ ・ Kun: いつつ、いつ"],
-    ["六", kanjiAns("lục"), "Sáu, số sáu\nOn: ロク、リク ・ Kun: むっつ, むつ, むい"],
-    ["七", kanjiAns("thất"), "Số bảy\nOn: シチ ・ Kun: なな(つ)"],
-    ["八", kanjiAns("bát"), "Tám, số tám\nOn: ハチ ・ Kun: やっ(つ), よう, や(つ)"],
-    ["九", kanjiAns("cửu"), "Chín (9)\nOn: キュウ、ク ・ Kun: ここの、ここの(つ)"],
-    ["十", kanjiAns("thập"), "Mười\nOn: ジュウ、ジッ、ジュッ ・ Kun: とう、とお"],
-    ["東", kanjiAns("đông"), "Phía đông\nOn: トウ ・ Kun: ひがし"],
-    ["西", kanjiAns("tây"), "Phía tây\nOn: セイ、サイ、ス ・ Kun: にし"],
-    ["南", kanjiAns("nam"), "Phía Nam\nOn: ナン、ナ ・ Kun: みなみ"],
-    ["北", kanjiAns("bắc"), "Phía bắc\nOn: ホク ・ Kun: きた"],
-    ["安", kanjiAns("an", "yên"), "Yên lành, an toàn, rẻ\nOn: アン ・ Kun: やす（い）"],
-    ["飲", kanjiAns("ẩm"), "Uống, uống nước\nOn: イン、オン ・ Kun: の（む）"],
-    ["雨", kanjiAns("vũ", "vú"), "Mưa\nOn: ウ ・ Kun: あめ、あま"],
-    ["駅", kanjiAns("dịch"), "Ga (xe điện), trạm\nOn: エキ ・ Kun: –"],
-    ["円", kanjiAns("viên"), "Vòng tròn, hình cầu, đồng yên\nOn: エン ・ Kun: まる(い)"],
-    ["火", kanjiAns("hỏa"), "Lửa, cháy\nOn: カ ・ Kun: ひ、ほ"],
-    ["下", kanjiAns("hạ"), "Phần dưới, phía dưới, hạ xuống, cho\nOn: カ、ゲ ・ Kun: した、もと、しも、さ（げる）、お（ろす）、くだ（る）、くだ（す）、お(りる)、さ(がる)、くだ(さる)"],
-    ["何", kanjiAns("hà"), "Cái gì, thế nào, bao nhiêu\nOn: カ ・ Kun: なに、なん"],
-    ["会", kanjiAns("hội"), "Gặp\nOn: カイ、エ ・ Kun: え、あう"],
-    ["外", kanjiAns("ngoại"), "Bên ngoài, khác, rời ra\nOn: ガイ、ゲ ・ Kun: そと、ほか、はず(れる/す)"],
-    ["学", kanjiAns("học"), "Học, khoa học, dạy dỗ\nOn: ガク ・ Kun: まな(ぶ)"],
-    ["間", kanjiAns("gian"), "Ở giữa, khoảng thời gian\nOn: カン、ケン ・ Kun: あいだ, ま"],
-    ["気", kanjiAns("khí"), "Hơi thở, khí\nOn: キ、ケ ・ Kun: いき"],
-    ["休", kanjiAns("hưu"), "Nghỉ ngơi, cho nghỉ, được nghỉ\nOn: キュウ ・ Kun: やす(む), やす(める), やす(まる)"],
-    ["魚", kanjiAns("ngư"), "Cá\nOn: ギョ ・ Kun: さかな"],
-    ["金", kanjiAns("kim"), "Tiền, kim loại\nOn: キン、コン、ゴン ・ Kun: かね, かな"],
-    ["空", kanjiAns("không", "khống"), "Bầu trời, bỏ trống\nOn: クウ ・ Kun: そら, あ(ける/く), から"],
-    ["月", kanjiAns("nguyệt"), "Mặt trăng, tháng\nOn: ゲツ、ガツ ・ Kun: つき"],
-    ["見", kanjiAns("kiến"), "Nhìn, ngắm, cho xem\nOn: ケン ・ Kun: み（る）, み（える）, み（せる）"],
-    ["言", kanjiAns("ngôn"), "Từ ngữ, nói\nOn: ゲン、ゴン ・ Kun: こと, い(う)"],
-    ["古", kanjiAns("cổ"), "Cũ, cổ\nOn: コ ・ Kun: ふる（い）"],
-    ["後", kanjiAns("hậu"), "Sau, đằng sau, muộn\nOn: ゴ、コウ ・ Kun: のち, こう, うし(ろ), あと, おくれる"],
-    ["午", kanjiAns("ngọ"), "Trưa\nOn: ゴ ・ Kun: –"],
-    ["語", kanjiAns("ngữ"), "Nói chuyện, kể chuyện\nOn: ゴ ・ Kun: かた(る), かた(らう)"],
-    ["校", kanjiAns("hiệu", "giáo"), "Trường học\nOn: コウ、キョウ ・ Kun: –"],
-    ["口", kanjiAns("khẩu"), "Miệng\nOn: コウ、ク ・ Kun: くち"],
-    ["行", kanjiAns("hành"), "Đi, tiến hành, dòng\nOn: コウ、ギョウ、アン ・ Kun: いく, ゆく, おこなう"],
-    ["高", kanjiAns("cao"), "Cao, nâng cao, làm cao lên\nOn: コウ ・ Kun: たか(い), たかまる, たかめる"],
-    ["国", kanjiAns("quốc"), "Đất nước\nOn: コク ・ Kun: くに"],
-    ["今", kanjiAns("kim"), "Hiện tại, bây giờ\nOn: コン、キン ・ Kun: いま"],
-    ["右", kanjiAns("hữu"), "Bên phải\nOn: ウ、ユウ ・ Kun: みぎ"],
-    ["左", kanjiAns("tả"), "Bên trái, bất chính\nOn: サ、シャ ・ Kun: ひだり"],
-    ["山", kanjiAns("sơn", "san"), "Núi non\nOn: サン、セン ・ Kun: やま"],
-    ["子", kanjiAns("tử", "tý"), "Trẻ con\nOn: シ、ス、ツ ・ Kun: こ"],
-    ["耳", kanjiAns("nhĩ"), "Tai\nOn: ジ ・ Kun: みみ"],
-    ["時", kanjiAns("thời", "thì"), "Thời gian, giờ\nOn: ジ ・ Kun: とき"],
-    ["車", kanjiAns("xa"), "Xe cộ, bánh xe\nOn: シャ ・ Kun: くるま"],
-    ["社", kanjiAns("xã"), "Đền thờ, miếu\nOn: シャ ・ Kun: やしろ"],
-    ["手", kanjiAns("thủ"), "Tay\nOn: シュ、ズ ・ Kun: て"],
-    ["週", kanjiAns("chu"), "Tuần\nOn: シュウ ・ Kun: –"],
-    ["出", kanjiAns("xuất"), "Xuất, rời đi, ra đi\nOn: シュツ、スイ ・ Kun: だ(す), で(る)"],
-    ["書", kanjiAns("thư"), "Viết\nOn: ショ ・ Kun: か(く)"],
-    ["小", kanjiAns("tiểu"), "Nhỏ bé, hẹp\nOn: ショウ ・ Kun: ちい(さい), こ, お"],
-    ["少", kanjiAns("thiếu", "thiểu"), "Một chút, một ít\nOn: ショウ ・ Kun: すこ(し), すく(ない)"],
-    ["上", kanjiAns("thượng"), "Phía trên, trên (thượng)\nOn: ジョウ、ショウ、シャン ・ Kun: うえ、かみ、あ（げる）、あ（がる）"],
-    ["食", kanjiAns("thực"), "Ăn\nOn: ショク、ジキ ・ Kun: たべる, くう, くらう"],
-    ["新", kanjiAns("tân"), "Mới\nOn: シン ・ Kun: あたら(しい), あら(た)"],
-    ["人", kanjiAns("nhân"), "Người\nOn: ジン、ニン ・ Kun: ひと"],
-    ["水", kanjiAns("thủy"), "Nước, chất lỏng\nOn: スイ ・ Kun: みず"],
-    ["生", kanjiAns("sinh"), "Sinh sống, làm sống lại, đẻ, sản xuất, lớn lên, sống\nOn: セイ、ショウ ・ Kun: い(きる/ける), いかす, う(まれる/む), は(やす/える), なま"],
-    ["川", kanjiAns("xuyên"), "Con sông\nOn: セン ・ Kun: かわ"],
-    ["千", kanjiAns("thiên"), "Ngàn (1000)\nOn: セン ・ Kun: ち"],
-    ["先", kanjiAns("tiên"), "Trước, đầu chỗ, tổ tiên\nOn: セン ・ Kun: さき"],
-    ["前", kanjiAns("tiền"), "Trước, phía trước, sớm, tiến, đi tới\nOn: ゼン ・ Kun: まえ"],
-    ["足", kanjiAns("túc"), "Chân, bước, đầy đủ, thêm vào\nOn: ソク ・ Kun: あし, た(る/す), た(りる)"],
-    ["多", kanjiAns("đa"), "Nhiều, đầy\nOn: タ ・ Kun: おお(い)"],
-    ["大", kanjiAns("đại"), "To lớn, nhiều\nOn: ダイ、タイ ・ Kun: おお(きい）、おお（い）"],
-    ["男", kanjiAns("nam"), "Đàn ông\nOn: ダン、ナン ・ Kun: おとこ"],
-    ["女", kanjiAns("nữ"), "Phụ nữ, giống cái\nOn: ジョ、ニョ、ニョウ ・ Kun: おんな, め"],
-    ["中", kanjiAns("trung"), "Ở giữa, bên trong, suốt\nOn: チュウ ・ Kun: なか"],
-    ["長", kanjiAns("trường"), "Dài\nOn: チョウ ・ Kun: なが(い)"],
-    ["天", kanjiAns("thiên"), "Trời, tự nhiên, thời tiết\nOn: テン ・ Kun: あめ、あま"],
-    ["店", kanjiAns("điếm"), "Cửa hàng\nOn: テン ・ Kun: みせ"],
-    ["電", kanjiAns("điện"), "Điện\nOn: デン ・ Kun: –"],
-    ["土", kanjiAns("thổ"), "Đất, thổ\nOn: ド、ト ・ Kun: つち"],
-    ["道", kanjiAns("đạo"), "Con đường, đạo lý\nOn: ドウ、トウ ・ Kun: みち"],
-    ["読", kanjiAns("độc"), "Đọc, nói\nOn: ドク、トク、トウ ・ Kun: よ(む)"],
-    ["日", kanjiAns("nhật"), "Ngày, mặt trời, nước Nhật, ban ngày\nOn: ニチ、ジツ ・ Kun: ひ, -か"],
-    ["入", kanjiAns("nhập"), "Đi vào, cho vào, nhét vào\nOn: ニュウ、ニッ ・ Kun: はい(る), い(る/れる)"],
-    ["年", kanjiAns("niên"), "Năm, tuổi\nOn: ネン ・ Kun: とし"],
-    ["買", kanjiAns("mãi"), "Mua\nOn: バイ ・ Kun: か(う)"],
-    ["白", kanjiAns("bạch"), "Màu trắng\nOn: ハク、ビャク ・ Kun: しろ(い), しろ, し"],
-    ["半", kanjiAns("bán"), "Một nửa, giữa\nOn: ハン ・ Kun: なか（ば）"],
-    ["百", kanjiAns("bách"), "Một trăm\nOn: ヒャク、ビャク ・ Kun: –"],
-    ["父", kanjiAns("phụ"), "Cha, bố\nOn: フ ・ Kun: ちち"],
-    ["分", kanjiAns("phân"), "Phút, phân chia, hiểu\nOn: ブン、フン、ブ ・ Kun: わ(ける/かつ), わ(かれる), わ(かる)"],
-    ["聞", kanjiAns("văn"), "Nghe, hỏi\nOn: ブン、モン ・ Kun: き(く), き(こえる)"],
-    ["母", kanjiAns("mẫu"), "Mẹ, nguồn gốc\nOn: ボ ・ Kun: はは"],
-    ["木", kanjiAns("mộc"), "Cây, gỗ\nOn: ボク、モク ・ Kun: き、こ"],
-    ["本", kanjiAns("bản", "bổn"), "Sách, gốc, chính, đếm vật\nOn: ホン ・ Kun: もと"],
-    ["毎", kanjiAns("mỗi"), "Mỗi, mọi\nOn: マイ ・ Kun: –"],
-    ["万", kanjiAns("vạn"), "10 ngàn\nOn: マン、バン ・ Kun: –"],
-    ["名", kanjiAns("danh"), "Tên, tiếng tăm, danh dự\nOn: メイ、ミョウ ・ Kun: な"],
-    ["目", kanjiAns("mục"), "Mắt, tầm mắt\nOn: モク、ボク ・ Kun: め、ま"],
-    ["友", kanjiAns("hữu"), "Bạn\nOn: ユウ ・ Kun: とも"],
-    ["来", kanjiAns("lai"), "Gây nên, đến, tới\nOn: ライ、タイ ・ Kun: きた(す/る), く(る)"],
-    ["立", kanjiAns("lập"), "Đứng dậy, dựng lên\nOn: リツ、リュウ ・ Kun: た(つ), た(てる)"],
-    ["話", kanjiAns("thoại"), "Nói chuyện, câu chuyện\nOn: ワ ・ Kun: はなし, はな(す)"],
-  ]
-};
-
 /* ===== Mode Kanji: gõ romaji của âm On / Kun =====
    Thẻ hiện sẵn: chữ Kanji + âm Hán Việt + nghĩa tiếng Việt.
    Đáp án = romaji của bất kỳ âm On hoặc Kun nào (tự sinh từ dòng "On: ... ・ Kun: ...").
@@ -448,163 +104,6 @@ function kanjiRomajiKey(s){
   return x.replace(/ou|oo/g, "o").replace(/uu/g, "u").replace(/ii/g, "i").replace(/ee/g, "e").replace(/aa/g, "a");
 }
 
-/* ===== Ví dụ (mode 5): gộp Hiragana + Katakana, và ví dụ kết hợp Kanji+Hiragana+Katakana ===== */
-const HIRAGANA_VIDU = [
-    ["あい","ai","tình yêu"],["あさ","asa","buổi sáng"],["あめ","ame","mưa"],
-    ["いえ","ie","nhà"],["いす","isu","cái ghế"],["いぬ","inu","con chó"],
-    ["うた","uta","bài hát"],["うみ","umi","biển"],["えき","eki","nhà ga"],
-    ["おかね","okane","tiền"],["おちゃ","ocha","trà"],["おとこ","otoko","đàn ông"],
-    ["おんな","onna","phụ nữ"],["かお","kao","khuôn mặt"],["かさ","kasa","cái ô"],
-    ["かぜ","kaze","gió (cảm cúm)"],["かみ","kami","tóc (giấy)"],["き","ki","cây"],
-    ["くつ","kutsu","giày"],["くも","kumo","mây"],["くるま","kuruma","xe hơi"],
-    ["こえ","koe","giọng nói"],["ことば","kotoba","từ ngữ"],["さかな","sakana","con cá"],
-    ["さくら","sakura","hoa anh đào"],["しお","shio","muối"],["しま","shima","hòn đảo"],
-    ["すし","sushi","sushi"],["たまご","tamago","quả trứng"],["ちから","chikara","sức mạnh"],
-    ["つき","tsuki","mặt trăng"],["とけい","tokei","đồng hồ"],["とり","tori","con chim"],
-    ["なつ","natsu","mùa hè"],["にく","niku","thịt"],["ねこ","neko","con mèo"],
-    ["はな","hana","hoa"],["はる","haru","mùa xuân"],["ひと","hito","con người"],
-    ["ふゆ","fuyu","mùa đông"],["ほし","hoshi","ngôi sao"],["まち","machi","thị trấn"],
-    ["みず","mizu","nước"],["みみ","mimi","lỗ tai"],["むし","mushi","côn trùng"],
-    ["め","me","con mắt"],["やま","yama","núi"],["ゆき","yuki","tuyết"],
-    ["よる","yoru","ban đêm"],["わたし","watashi","tôi"],
-    ["あたま","atama","đầu"],["あに","ani","anh trai"],["あね","ane","chị gái"],
-    ["いもうと","imouto","em gái"],["おとうと","otouto","em trai"],["ちち","chichi","bố"],
-    ["はは","haha","mẹ"],["そふ","sofu","ông"],["そぼ","sobo","bà"],
-    ["かぞく","kazoku","gia đình"],["ともだち","tomodachi","bạn bè"],["せんせい","sensei","giáo viên"],
-    ["がくせい","gakusei","học sinh"],["かいしゃ","kaisha","công ty"],["しごと","shigoto","công việc"],
-    ["でんわ","denwa","điện thoại"],["てがみ","tegami","lá thư"],["きっぷ","kippu","vé xe/tàu"],
-    ["えいが","eiga","phim điện ảnh"],["おんがく","ongaku","âm nhạc"],["しゃしん","shashin","ảnh chụp"],
-    ["にわ","niwa","sân vườn"],["へや","heya","căn phòng"],["まど","mado","cửa sổ"],
-    ["とびら","tobira","cánh cửa"],["かぎ","kagi","chìa khóa"],["はし","hashi","đôi đũa"],
-    ["さら","sara","cái đĩa"],["ちゃわん","chawan","cái bát cơm"],["たべもの","tabemono","đồ ăn"],
-    ["のみもの","nomimono","đồ uống"],["やさい","yasai","rau củ"],["くだもの","kudamono","trái cây"],
-    ["にわとり","niwatori","con gà"],["うし","ushi","con bò"],["うま","uma","con ngựa"],
-    ["ぶた","buta","con lợn"],["ひつじ","hitsuji","con cừu"],["さる","saru","con khỉ"],
-    ["かえる","kaeru","con ếch"],["ちょう","chou","con bướm"],["はち","hachi","con ong"],
-    ["くさ","kusa","cỏ"],["こおり","koori","nước đá"],["ゆびわ","yubiwa","nhẫn đeo tay"],
-    ["ぼうし","boushi","mũ nón"],["くつした","kutsushita","vớ/tất"],["めがね","megane","kính mắt"],
-    ["かばん","kaban","cái cặp"],["つくえ","tsukue","cái bàn học"]
-];
-
-const KATAKANA_VIDU = [
-    ["アヒル","ahiru","con vịt"],["ライオン","raion","con sư tử"],["ゾウ","zou","con voi"],
-    ["トラ","tora","con hổ"],["キリン","kirin","con hươu cao cổ"],["パンダ","panda","gấu trúc"],
-    ["ラクダ","rakuda","con lạc đà"],["コアラ","koara","gấu koala"],["ペンギン","pengin","chim cánh cụt"],
-    ["カメラ","kamera","máy ảnh"],["テレビ","terebi","ti vi"],["ラジオ","rajio","đài radio"],
-    ["パソコン","pasokon","máy tính cá nhân"],["インターネット",["inta-netto","intaanetto"],"internet"],
-    ["ニュース",["nyu-su","nyuusu"],"tin tức"],["スポーツ",["supo-tsu","supootsu"],"thể thao"],
-    ["サッカー",["sakka-","sakkaa"],"bóng đá"],["テニス","tenisu","quần vợt"],
-    ["ジョギング","jogingu","chạy bộ"],["コーヒー",["ko-hi-","koohii"],"cà phê"],
-    ["ジュース",["ju-su","juusu"],"nước ép"],["パン","pan","bánh mì"],
-    ["ケーキ",["ke-ki","keeki"],"bánh ngọt"],["チョコレート",["chokore-to","chokoreeto"],"sô-cô-la"],
-    ["アイスクリーム",["aisukuri-mu","aisukuriimu"],"kem"],["レストラン","resutoran","nhà hàng"],
-    ["ホテル","hoteru","khách sạn"],["タクシー",["takushi-","takushii"],"taxi"],
-    ["バス","basu","xe buýt"],["タオル","taoru","khăn tắm"],
-    ["シャンプー",["shanpu-","shanpuu"],"dầu gội"],["ソファー",["sofa-","sofaa"],"ghế sofa"],
-    ["カレンダー",["karenda-","karendaa"],"lịch"],["ノート",["no-to","nooto"],"quyển vở"],
-    ["ペン","pen","cây bút"],["ナイフ","naifu","con dao"],
-    ["フォーク",["fo-ku","fooku"],"cái nĩa"],["スプーン",["supu-n","supuun"],"cái thìa"],
-    ["ボタン","botan","cái nút"],["カード",["ka-do","kaado"],"thẻ"],
-    ["チケット","chiketto","vé"],["パーティー",["pa-ti-","paatii"],"bữa tiệc"],
-    ["ダンス","dansu","khiêu vũ"],["ピアノ","piano","đàn piano"],
-    ["ギター",["gita-","gitaa"],"đàn guitar"],["メロン","meron","dưa lưới"],
-    ["レモン","remon","quả chanh vàng"],["トマト","tomato","cà chua"],
-    ["サラダ","sarada","salad"],["ワイン","wain","rượu vang"],
-    ["キツネ","kitsune","con cáo"],["ウサギ","usagi","con thỏ"],["シマウマ","shimauma","ngựa vằn"],
-    ["サイ","sai","con tê giác"],["ワニ","wani","con cá sấu"],["イルカ","iruka","con cá heo"],
-    ["クジラ","kujira","con cá voi"],["ラッコ","rakko","rái cá biển"],["カバ","kaba","hà mã"],
-    ["チーター",["chi-ta-","chiitaa"],"báo săn"],["ジャガー",["jaga-","jagaa"],"báo đốm"],
-    ["ハムスター",["hamusuta-","hamusutaa"],"chuột hamster"],["モルモット","morumotto","chuột lang"],
-    ["オウム","oumu","con vẹt"],["フクロウ","fukurou","cú mèo"],
-    ["コンピューター",["konpyu-ta-","konpyuutaa"],"máy vi tính"],["スマートフォン",["suma-tofon","sumaatofon"],"điện thoại thông minh"],
-    ["テーブル",["te-buru","teeburu"],"cái bàn"],["ベッド","beddo","giường ngủ"],["カーテン",["ka-ten","kaaten"],"rèm cửa"],
-    ["ドア","doa","cửa ra vào"],["マンション","manshon","chung cư cao cấp"],["アパート",["apa-to","apaato"],"nhà chung cư"],
-    ["エレベーター",["erebe-ta-","erebeetaa"],"thang máy"],["エスカレーター",["esukare-ta-","esukareetaa"],"thang cuốn"],
-    ["デパート",["depa-to","depaato"],"trung tâm thương mại"],["スーパー",["su-pa-","suupaa"],"siêu thị"],
-    ["コンビニ","konbini","cửa hàng tiện lợi"],["レジ","reji","quầy thu ngân"],["サイズ","saizu","kích cỡ"],
-    ["カラー",["kara-","karaa"],"màu sắc"],["デザイン","dezain","thiết kế"],["アイデア","aidea","ý tưởng"],
-    ["プレゼント","purezento","quà tặng"],["クリスマス","kurisumasu","Giáng sinh"],["ハロウィン","harowin","lễ hội Halloween"],
-    ["イベント","ibento","sự kiện"],["チーム",["chi-mu","chiimu"],"đội nhóm"],
-    ["リーダー",["ri-da-","riidaa"],"người lãnh đạo"],["ゲーム",["ge-mu","geemu"],"trò chơi"],
-    ["アニメ","anime","phim hoạt hình"],["マンガ","manga","truyện tranh"],
-    ["キャラクター",["kyarakuta-","kyarakutaa"],"nhân vật"],["ロボット","robotto","người máy"],
-    ["ミルク","miruku","sữa"],["バター",["bata-","bataa"],"bơ"],["チーズ",["chi-zu","chiizu"],"phô mai"],
-    ["ヨーグルト",["yo-guruto","yooguruto"],"sữa chua"],["ハンバーガー",["hanba-ga-","hanbaagaa"],"bánh hamburger"],
-    ["ピザ","piza","pizza"]
-];
-
-const VIDU_KANA = [...HIRAGANA_VIDU, ...KATAKANA_VIDU];
-
-// Chấp nhận có / không có khoảng trắng giữa các từ, và cả hai cách gõ âm dài katakana (vd: "te-buru" / "teeburu")
-function mixAns(...forms){
-  const set = new Set();
-  forms.forEach(f => {
-    set.add(f);
-    set.add(f.replace(/\s+/g, ''));
-  });
-  return Array.from(set);
-}
-
-// Ví dụ có đủ cả 3 loại chữ trong cùng một cụm: Kanji + Hiragana + Katakana
-const MIX_EXAMPLES = [
-    ["一つのペン", mixAns("hitotsu no pen"), "một cây bút"],
-    ["二つのカード", mixAns("futatsu no ka-do", "futatsu no kaado"), "hai cái thẻ"],
-    ["三つのボタン", mixAns("mittsu no botan"), "ba cái nút"],
-    ["四つのケーキ", mixAns("yottsu no ke-ki", "yottsu no keeki"), "bốn cái bánh ngọt"],
-    ["五つのチケット", mixAns("itsutsu no chiketto"), "năm cái vé"],
-    ["六つのメロン", mixAns("muttsu no meron"), "sáu quả dưa lưới"],
-    ["七つのレモン", mixAns("nanatsu no remon"), "bảy quả chanh"],
-    ["八つのトマト", mixAns("yattsu no tomato"), "tám quả cà chua"],
-    ["九つのタオル", mixAns("kokonotsu no taoru"), "chín cái khăn tắm"],
-    ["新しいカメラ", mixAns("atarashii kamera"), "máy ảnh mới"],
-    ["大きいゾウ", mixAns("ookii zou"), "con voi to"],
-    ["小さいノート", mixAns("chiisai nooto"), "quyển vở nhỏ"],
-    ["高いホテル", mixAns("takai hoteru"), "khách sạn đắt tiền"],
-    ["安いパン", mixAns("yasui pan"), "ổ bánh mì rẻ"],
-    ["白いドア", mixAns("shiroi doa"), "cánh cửa màu trắng"],
-    ["長いソファー", mixAns("nagai sofa-", "nagai sofaa"), "cái ghế sofa dài"],
-    ["古いカレンダー", mixAns("furui karenda-", "furui karendaa"), "quyển lịch cũ"],
-    ["円いテーブル", mixAns("marui te-buru", "marui teeburu"), "cái bàn tròn"],
-    ["多いプレゼント", mixAns("ooi purezento"), "nhiều quà tặng"],
-    ["車のデザイン", mixAns("kuruma no dezain"), "thiết kế xe hơi"],
-    ["山のレストラン", mixAns("yama no resutoran"), "nhà hàng trên núi"],
-    ["川のバス", mixAns("kawa no basu"), "xe buýt ven sông"],
-    ["手のサイズ", mixAns("te no saizu"), "kích cỡ bàn tay"],
-    ["目のカラー", mixAns("me no karaa"), "màu mắt"],
-    ["本のキャラクター", mixAns("hon no kyarakuta-", "hon no kyarakutaa"), "nhân vật trong sách"],
-    ["店のレジ", mixAns("mise no reji"), "quầy thu ngân cửa hàng"],
-    ["年のイベント", mixAns("toshi no ibento"), "sự kiện trong năm"],
-    ["名のカード", mixAns("na no ka-do", "na no kaado"), "tấm thẻ tên"],
-    ["少ないアイデア", mixAns("sukunai aidea"), "ít ý tưởng"],
-    ["何のゲーム", mixAns("nan no ge-mu", "nan no geemu"), "trò chơi gì"],
-    ["右のドア", mixAns("migi no doa"), "cửa bên phải"],
-    ["左のポケット", mixAns("hidari no poketto"), "túi bên trái"],
-    ["東のタワー", mixAns("higashi no tawa-", "higashi no tawaa"), "tòa tháp phía đông"],
-    ["西のビーチ", mixAns("nishi no bi-chi", "nishi no biichi"), "bãi biển phía tây"],
-    ["南のジャングル", mixAns("minami no janguru"), "khu rừng phía nam"],
-    ["北のオーロラ", mixAns("kita no o-rora", "kita no oorora"), "cực quang phía bắc"],
-    ["上のテーブル", mixAns("ue no te-buru", "ue no teeburu"), "cái bàn ở trên"],
-    ["下のカフェ", mixAns("shita no kafe"), "quán cà phê ở tầng dưới"],
-    ["中のプール", mixAns("naka no pu-ru", "naka no puuru"), "hồ bơi bên trong"],
-    ["空のロケット", mixAns("sora no roketto"), "tên lửa bay lên trời"],
-    ["月のツアー", mixAns("tsuki no tsua-", "tsuki no tsuaa"), "tour lên mặt trăng"],
-    ["木のギター", mixAns("ki no gita-", "ki no gitaa"), "đàn guitar gỗ"],
-    ["道のマップ", mixAns("michi no mappu"), "bản đồ đường đi"],
-    ["父のスマートフォン", mixAns("chichi no suma-tofon", "chichi no sumaatofon"), "điện thoại thông minh của bố"],
-    ["母のエプロン", mixAns("haha no epuron"), "tạp dề của mẹ"],
-    ["友のバイク", mixAns("tomo no baiku"), "xe máy của bạn"],
-    ["男のコート", mixAns("otoko no ko-to", "otoko no kooto"), "áo khoác của đàn ông"],
-    ["女のリボン", mixAns("onna no ribon"), "cái nơ của con gái"],
-    ["耳のイヤホン", mixAns("mimi no iyahon"), "tai nghe"],
-    ["口のマスク", mixAns("kuchi no masuku"), "khẩu trang che miệng"]
-];
-
-const VIDU = {
-  vidu: VIDU_KANA,
-  mix: MIX_EXAMPLES
-};
-
-
 /* ==================== Logic chính (thẻ Hiragana / Katakana / Kanji, hero, thanh công cụ) ==================== */
 const GROUP_TITLES = {
   gojuon: "Bảng cơ bản (Gojūon)",
@@ -637,6 +136,49 @@ const PROGRESS_SUFFIX = { hiragana: "đã đúng", katakana: "đã đúng", tefo
 let hideCorrect = false;
 let currentFilter = "all";
 let currentMode = "hiragana";
+
+/* ---------- Lưu tiến độ (localStorage): mỗi mode nhớ những câu đã đúng, tải lại trang không mất ----------
+   - 4 mode dạng thẻ: lưu id thẻ = "nhóm|chữ" của các thẻ đã trả lời đúng.
+   - Thể て: lưu theo từng câu, "c" = đã gõ đúng, "r" = đã xem đáp án.
+   Id không còn trong dữ liệu (sau khi sửa data.js) sẽ tự bị bỏ khi lưu lần kế tiếp. */
+const PROGRESS_KEY = "nihongo-progress-v1";
+const savedProgress = (() => {
+  try {
+    const raw = JSON.parse(localStorage.getItem(PROGRESS_KEY) || "{}");
+    return (raw && typeof raw === "object" && !Array.isArray(raw)) ? raw : {};
+  } catch (e) { return {}; }
+})();
+const asIdSet = (v) => new Set(Array.isArray(v) ? v.filter(x => typeof x === "string") : []);
+const savedSets = {
+  hiragana: asIdSet(savedProgress.hiragana),
+  katakana: asIdSet(savedProgress.katakana),
+  kanji:    asIdSet(savedProgress.kanji),
+  vidu:     asIdSet(savedProgress.vidu)
+};
+const doneIds = { hiragana: new Set(), katakana: new Set(), kanji: new Set(), vidu: new Set() };
+const tfState = {};
+if(savedProgress.teform && typeof savedProgress.teform === "object" && !Array.isArray(savedProgress.teform)){
+  Object.entries(savedProgress.teform).forEach(([id, st]) => { if(st === "c" || st === "r") tfState[id] = st; });
+}
+function persistProgress(){
+  try {
+    localStorage.setItem(PROGRESS_KEY, JSON.stringify({
+      hiragana: [...doneIds.hiragana],
+      katakana: [...doneIds.katakana],
+      kanji:    [...doneIds.kanji],
+      vidu:     [...doneIds.vidu],
+      teform:   tfState
+    }));
+  } catch (e) {}
+}
+
+// Gợi ý khi sai nhiều lần: chữ cái đầu của đáp án (nhiều đáp án hợp lệ thì liệt kê các chữ đầu khác nhau)
+function firstLetterHint(answers){
+  const list = answers.map(a => normalize(String(a)));
+  if(!list.length || list.every(a => a.length <= 1)) return ""; // đáp án 1 chữ cái thì gợi ý = lộ đáp án, bỏ
+  const letters = [...new Set(list.map(a => a.charAt(0)).filter(Boolean))];
+  return "chữ đầu: " + letters.slice(0, 4).join(" / ") + (letters.length > 4 ? " …" : "");
+}
 
 const progressFill = document.getElementById("progressFill");
 const progressLabel = document.getElementById("progressLabel");
@@ -689,6 +231,32 @@ function renderMixedKana(kanaEl, word){
   });
 }
 
+/* Mode Kanji: nút ẩn/hiện âm Hán Việt + nghĩa dưới chữ Hán (nhớ lựa chọn cho lần mở sau) */
+const HIDE_MEANING_KEY = "nihongo-hide-meaning";
+let hideKanjiMeaning = false;
+try { hideKanjiMeaning = localStorage.getItem(HIDE_MEANING_KEY) === "1"; } catch (e) {}
+// Hai nút trên thanh lọc (chỉ hiện ở mode Kanji) để dùng được cả khi đang cuộn xuống dưới:
+// chúng bấm thay cho nút cùng chức năng ở tiêu đề danh sách, nên luôn đồng bộ với nhau.
+const kanjiMeaningChip = document.getElementById("kanjiMeaning");
+const kanjiShuffleChip = document.getElementById("kanjiShuffle");
+function updateTopMeaningChip(){
+  if(!kanjiMeaningChip) return;
+  kanjiMeaningChip.textContent = hideKanjiMeaning ? "Hiện nghĩa" : "Ẩn nghĩa";
+  kanjiMeaningChip.classList.toggle("active", hideKanjiMeaning);
+  kanjiMeaningChip.setAttribute("aria-pressed", String(hideKanjiMeaning));
+}
+if(kanjiMeaningChip) kanjiMeaningChip.addEventListener("click", () => {
+  const b = document.querySelector("#main-kanji .meaning-btn");
+  if(b) b.click();
+});
+if(kanjiShuffleChip) kanjiShuffleChip.addEventListener("click", () => {
+  const b = document.querySelector("#main-kanji .shuffle-btn:not(.meaning-btn)");
+  if(b) b.click();
+});
+
+const ICON_EYE ='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg>';
+const ICON_EYE_OFF = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.9 4.24A9.1 9.1 0 0 1 12 5c6.5 0 10 7 10 7a17.6 17.6 0 0 1-3.2 4.2"/><path d="M6.6 6.6A17.7 17.7 0 0 0 2 12s3.5 7 10 7a9.7 9.7 0 0 0 4.4-1.1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/><path d="m2 2 20 20"/></svg>';
+
 function buildSection(mode, key, items){
   const section = document.createElement("section");
   section.className = "section";
@@ -702,6 +270,25 @@ function buildSection(mode, key, items){
   shuffleBtn.className = "shuffle-btn";
   shuffleBtn.type = "button";
   shuffleBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="M4 4l5 5"/></svg><span>Xáo trộn</span>';
+  if(mode === "kanji"){
+    // Nút ẩn/hiện nghĩa: đặt ngay cạnh nút Xáo trộn (bên trái nó)
+    const meaningBtn = document.createElement("button");
+    meaningBtn.className = "shuffle-btn meaning-btn";
+    meaningBtn.type = "button";
+    const syncMeaningBtn = () => {
+      section.classList.toggle("hide-meaning", hideKanjiMeaning);
+      meaningBtn.setAttribute("aria-pressed", String(hideKanjiMeaning));
+      meaningBtn.innerHTML = (hideKanjiMeaning ? ICON_EYE : ICON_EYE_OFF) + `<span>${hideKanjiMeaning ? "Hiện nghĩa" : "Ẩn nghĩa"}</span>`;
+      updateTopMeaningChip();
+    };
+    syncMeaningBtn();
+    meaningBtn.addEventListener("click", ()=>{
+      hideKanjiMeaning = !hideKanjiMeaning;
+      try { localStorage.setItem(HIDE_MEANING_KEY, hideKanjiMeaning ? "1" : "0"); } catch (e) {}
+      syncMeaningBtn();
+    });
+    titleWrap.appendChild(meaningBtn);
+  }
   titleWrap.appendChild(shuffleBtn);
 
   section.appendChild(titleWrap);
@@ -748,14 +335,20 @@ function buildSection(mode, key, items){
     if(meaning){
       meaningEl = document.createElement("div");
       meaningEl.className = "meaning";
-      meaningEl.textContent = meaning;
       if(readings){
+        // Hán Việt + nghĩa nằm trong .mn (nút "Ẩn nghĩa" ẩn phần này)
+        const mn = document.createElement("span");
+        mn.className = "mn";
+        mn.textContent = meaning;
+        meaningEl.appendChild(mn);
         // âm On/Kun: nằm sẵn trong thẻ nhưng bị CSS ẩn, chỉ hiện khi thẻ .correct / .revealed
         const rd = document.createElement("div");
         rd.className = "rd";
         rd.lang = "ja";
         rd.textContent = readings;
         meaningEl.appendChild(rd);
+      } else {
+        meaningEl.textContent = meaning;
       }
     }
 
@@ -769,6 +362,10 @@ function buildSection(mode, key, items){
 
     const fb = document.createElement("div");
     fb.className = "fb";
+
+    const cardId = key + "|" + kana;   // id để lưu tiến độ
+    let wrongTries = 0, lastWrong = ""; // đếm số lần sai (khác nhau) để hiện gợi ý
+    card._resetTries = () => { wrongTries = 0; lastWrong = ""; };
 
     const retryBtn = document.createElement("button");
     retryBtn.className = "retry-btn";
@@ -784,7 +381,12 @@ function buildSection(mode, key, items){
       revealBtn.disabled = false;
       fb.textContent = "";
       fb.className = "fb";
-      if(wasCorrect) correctCount[mode]--;
+      card._resetTries();
+      if(wasCorrect){
+        correctCount[mode]--;
+        doneIds[mode].delete(cardId);
+        persistProgress();
+      }
       updateProgress();
       if(hideCorrect) applyFilters();
       input.focus();
@@ -802,12 +404,16 @@ function buildSection(mode, key, items){
         fb.className = "fb ok";
         input.disabled = true;
         correctCount[mode]++;
+        doneIds[mode].add(cardId);
+        persistProgress();
         updateProgress();
         if(hideCorrect) applyFilters();
       } else {
         card.classList.remove("correct");
         card.classList.add("wrong");
-        fb.textContent = "non vl";
+        if(val !== lastWrong){ lastWrong = val; wrongTries++; } // blur lại với cùng giá trị sai không tính thêm
+        const hint = wrongTries >= 2 ? firstLetterHint(answers) : "";
+        fb.textContent = hint ? `non vl · ${hint}` : "non vl";
         fb.className = "fb no";
         setTimeout(()=>card.classList.remove("wrong"), 320);
       }
@@ -845,6 +451,16 @@ function buildSection(mode, key, items){
     card.appendChild(ans);
     card.appendChild(fb);
     card.appendChild(retryBtn);
+    // khôi phục thẻ đã đúng từ lần học trước
+    if(savedSets[mode] && savedSets[mode].has(cardId)){
+      card.classList.add("correct");
+      input.value = answers[0];
+      input.disabled = true;
+      fb.textContent = "tạm";
+      fb.className = "fb ok";
+      correctCount[mode]++;
+      doneIds[mode].add(cardId);
+    }
     grid.appendChild(card);
   });
 
@@ -945,6 +561,10 @@ function applyFilters(){
 Object.entries(MODES).forEach(([mode, cfg])=>{
   if(!cfg.items) return; // teform không dùng buildSection
   Object.entries(cfg.items).forEach(([key, items]) => buildSection(mode, key, items));
+});
+// mode nào đã hoàn thành 100% từ lần trước thì không bắn pháo giấy lại mỗi lần mở trang / chuyển mode
+["hiragana", "katakana", "kanji", "vidu"].forEach(m => {
+  if(MODE_TOTALS[m] > 0 && correctCount[m] >= MODE_TOTALS[m]) celebratedModes.add(m);
 });
 updateProgress();
 
@@ -1062,7 +682,24 @@ function updateAllChipLabel(mode){
   if(allChip) allChip.textContent = `Tất cả (${MODE_TOTALS[mode] ?? TOTAL})`;
 }
 const topbarEl = document.getElementById("topbar");
-const toolbarToggle = document.getElementById("toolbarToggle");
+
+// Viên thuốc chọn mode bám theo đúng nút đang chọn. Trên màn hình hẹp các nút có bề rộng khác nhau
+// (nhãn dài ngắn khác nhau) nên không thể suy ra vị trí từ "chỉ số × 1/5 bề rộng" như trước.
+const modeThumb = modeRow.querySelector(".mode-thumb");
+function syncModeThumb(){
+  const act = modeRow.querySelector(".mode-btn.active");
+  if(!modeThumb || !act || !act.offsetWidth) return;
+  modeThumb.style.setProperty("--tx", (act.offsetLeft - 4) + "px"); // .mode-thumb đặt sẵn left:4px
+  modeThumb.style.setProperty("--tw", act.offsetWidth + "px");
+}
+syncModeThumb();
+if(window.ResizeObserver){
+  const ro = new ResizeObserver(syncModeThumb); // bắt cả lúc đổi cỡ chữ, font tải xong, thanh co/giãn khi cuộn
+  ro.observe(modeRow);
+  modeRow.querySelectorAll(".mode-btn").forEach(b => ro.observe(b));
+}
+window.addEventListener("resize", syncModeThumb);
+if(document.fonts && document.fonts.ready) document.fonts.ready.then(syncModeThumb);
 
 document.querySelectorAll("#modeRow .mode-btn").forEach(btn=>{
   btn.addEventListener("click", ()=>{
@@ -1075,6 +712,7 @@ document.querySelectorAll("#modeRow .mode-btn").forEach(btn=>{
     btn.setAttribute("aria-pressed", "true");
     modeRow.dataset.mode = btn.dataset.mode;
     modeRow.style.setProperty("--i", MODE_INDEX[btn.dataset.mode]);
+    syncModeThumb();
     const thumbFill = modeRow.querySelector(".thumb-fill");
     if (thumbFill) {
       thumbFill.classList.remove("squash");
@@ -1113,29 +751,41 @@ document.querySelectorAll("#modeRow .mode-btn").forEach(btn=>{
 setHero(currentMode, false);
 updateAllChipLabel(currentMode);
 
-/* ---------- Dock thu gọn khi cuộn ---------- */
-const dockSentinel = document.getElementById("dockSentinel");
+/* ---------- Góc trái trên cùng: logo (về trang chủ) + nút 3 gạch (mở / đóng thanh chọn mode, tiến độ, lọc) ---------- */
+const menuDock = document.getElementById("menuDock");
+const menuToggle = document.getElementById("menuToggle");
+const brandLogo = document.getElementById("brandLogo");
+let menuCloseTimer = 0;
 
-function updateTopbarState(){
-  const stick = dockSentinel.getBoundingClientRect().top + window.scrollY - 12;
-  const y = window.scrollY;
-  const wasCollapsed = topbarEl.classList.contains("collapsed");
-  // độ trễ (hysteresis) để thanh không nhấp nháy khi co/giãn
-  const collapsed = wasCollapsed ? y > stick + 30 : y > stick + 110;
-  topbarEl.classList.toggle("collapsed", collapsed);
-  topbarEl.classList.toggle("scrolled", y >= stick);
-  if(!collapsed){
-    topbarEl.classList.remove("force-expanded");
-    toolbarToggle.querySelector("span").textContent = "Hiện thanh lọc";
-  }
+function isMenuOpen(){ return menuDock.classList.contains("open"); }
+function setMenu(open){
+  clearTimeout(menuCloseTimer);
+  menuDock.classList.toggle("open", open);
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Đóng menu" : "Mở menu");
 }
-window.addEventListener("scroll", updateTopbarState, { passive: true });
-window.addEventListener("resize", updateTopbarState);
-updateTopbarState();
+menuToggle.addEventListener("click", () => setMenu(!isMenuOpen()));
 
-toolbarToggle.addEventListener("click", ()=>{
-  const isForced = topbarEl.classList.toggle("force-expanded");
-  toolbarToggle.querySelector("span").textContent = isForced ? "Ẩn thanh lọc" : "Hiện thanh lọc";
+// bấm ra ngoài thanh hoặc nhấn Esc thì đóng
+document.addEventListener("pointerdown", (e) => {
+  if(isMenuOpen() && !menuDock.contains(e.target)) setMenu(false);
+});
+document.addEventListener("keydown", (e) => {
+  if(e.key === "Escape" && isMenuOpen()){ setMenu(false); menuToggle.focus({ preventScroll: true }); }
+});
+
+// chọn mode xong thì chờ viên thuốc trượt tới nơi (cho kịp nhìn hoạt ảnh) rồi tự đóng để thấy nội dung mới
+modeRow.addEventListener("click", (e) => {
+  if(!e.target.closest(".mode-btn")) return;
+  clearTimeout(menuCloseTimer);
+  menuCloseTimer = setTimeout(() => setMenu(false), 650);
+});
+
+// logo: về trang chủ (đầu trang, mode đang chọn giữ nguyên)
+brandLogo.addEventListener("click", (e) => {
+  e.preventDefault();
+  setMenu(false);
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
 document.querySelectorAll("#filterControls .chip[data-filter]").forEach(btn=>{
@@ -1166,8 +816,10 @@ document.getElementById("resetBtn").addEventListener("click", ()=>{
     const fb = card.querySelector(".fb");
     fb.textContent = "";
     fb.className = "fb";
+    if(card._resetTries) card._resetTries();
   });
   correctCount[currentMode] = 0;
+  if(doneIds[currentMode]){ doneIds[currentMode].clear(); persistProgress(); }
   updateProgress();
 });
 
@@ -1236,6 +888,8 @@ document.getElementById("resetBtn").addEventListener("click", ()=>{
   document.getElementById('tfTotal').textContent = て.length;
 
   let rows = [], inputs = [], fbEls = [], eyeBtns = [], done = [];
+  let tries = [], lastWrongVal = []; // số lần sai (khác nhau) của từng câu, để hiện gợi ý chữ đầu
+  const tfId = (i) => i + "|" + て[i][0]; // id lưu tiến độ
 
   // chỉ đếm số câu đã đi qua cho thanh tiến độ, không phân biệt đúng / sai
   function updateScore(){
@@ -1248,6 +902,7 @@ document.getElementById("resetBtn").addEventListener("click", ()=>{
     listEl.innerHTML = '';
     rows = []; inputs = []; fbEls = []; eyeBtns = [];
     done = new Array(て.length).fill(false);
+    tries = []; lastWrongVal = [];
 
     て.forEach((item, i) => {
       const [kana, meta, kanaAnswer, romajiAnswer] = item;
@@ -1332,6 +987,24 @@ document.getElementById("resetBtn").addEventListener("click", ()=>{
       });
     });
 
+    // khôi phục các câu đã làm từ lần trước (đồng thời bỏ những id không còn trong dữ liệu)
+    const valid = {};
+    て.forEach((item, i) => {
+      const st = tfState[tfId(i)];
+      if (st !== 'c' && st !== 'r') return;
+      valid[tfId(i)] = st;
+      lock(i, st === 'c' ? 'correct' : 'revealed', true);
+      fbEls[i].className = 'tf-fb';
+      if (st === 'c'){
+        inputs[i].value = item[3];
+        fbEls[i].textContent = 'tạm';
+      } else {
+        fbEls[i].textContent = `Đáp án: ${item[3]} (${item[2]})`;
+      }
+    });
+    Object.keys(tfState).forEach(k => delete tfState[k]);
+    Object.assign(tfState, valid);
+
     updateScore();
   }
 
@@ -1349,12 +1022,16 @@ document.getElementById("resetBtn").addEventListener("click", ()=>{
     }
   }
 
-  function lock(i, cls){
+  function lock(i, cls, silent){
     done[i] = true;
     rows[i].classList.remove('nudge', 'wrong');
     rows[i].classList.add(cls);
     inputs[i].disabled = true;
     eyeBtns[i].disabled = true;
+    if (!silent){ // silent = đang khôi phục từ localStorage, khỏi ghi lại
+      tfState[tfId(i)] = (cls === 'correct') ? 'c' : 'r';
+      persistProgress();
+    }
   }
 
   // xem đáp án: chỉ hiện đáp án nhẹ nhàng (màu tím), không tính đúng / sai; có nút làm lại riêng câu này
@@ -1371,6 +1048,9 @@ document.getElementById("resetBtn").addEventListener("click", ()=>{
   // làm lại đúng câu này, không đụng tới các câu khác
   function redo(i){
     done[i] = false;
+    tries[i] = 0; lastWrongVal[i] = '';
+    delete tfState[tfId(i)];
+    persistProgress();
     rows[i].classList.remove('revealed', 'correct', 'nudge', 'wrong');
     inputs[i].value = '';
     inputs[i].disabled = false;
@@ -1398,19 +1078,25 @@ document.getElementById("resetBtn").addEventListener("click", ()=>{
       rows[i].classList.remove('wrong');
       void rows[i].offsetWidth;
       rows[i].classList.add('wrong');
+      if (raw !== lastWrongVal[i]){ lastWrongVal[i] = raw; tries[i] = (tries[i] || 0) + 1; }
+      const hint = tries[i] >= 2 ? firstLetterHint([romajiAnswer]) : '';
       fbEls[i].className = 'tf-fb no';
-      fbEls[i].textContent = 'non vl';
+      fbEls[i].textContent = hint ? `non vl · ${hint}` : 'non vl';
       setTimeout(() => rows[i].classList.remove('wrong'), 420);
     }
   }
 
   document.getElementById('tfRetry').addEventListener('click', () => {
+    Object.keys(tfState).forEach(k => delete tfState[k]); // làm lại từ đầu: xoá tiến độ đã lưu của mode này
+    persistProgress();
     buildList();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     inputs[0].focus({ preventScroll: true });
   });
 
   buildList();
+  // đã làm hết Thể て từ lần trước thì không bắn pháo giấy khi mở trang / chuyển mode
+  if (MODE_TOTALS.teform > 0 && correctCount.teform >= MODE_TOTALS.teform) celebratedModes.add('teform');
 })();
 
 
@@ -1576,7 +1262,7 @@ document.getElementById("resetBtn").addEventListener("click", ()=>{
 /* ---------- Hiệu ứng gợn sóng khi bấm nút, tăng độ "đã tay" cho mọi thao tác ---------- */
 (function(){
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const SEL = '.chip, .mode-btn, .theme-toggle, .shuffle-btn, .reveal-btn, .retry-btn, .tf-redo, .toolbar-toggle';
+  const SEL = '.chip, .mode-btn, .theme-toggle, .menu-toggle, .shuffle-btn, .reveal-btn, .retry-btn, .tf-redo';
   document.addEventListener('pointerdown', (e) => {
     const btn = e.target.closest && e.target.closest(SEL);
     if (!btn || btn.disabled) return;
@@ -1588,7 +1274,11 @@ document.getElementById("resetBtn").addEventListener("click", ()=>{
     ripple.style.left = (e.clientX - r.left - size / 2) + 'px';
     ripple.style.top = (e.clientY - r.top - size / 2) + 'px';
     if (getComputedStyle(btn).position === 'static') btn.style.position = 'relative';
+    // Dùng overflow:clip (nếu trình duyệt hỗ trợ): vẫn cắt gợn sóng nhưng KHÔNG làm nút co lại.
+    // Với overflow:hidden, nút nằm trong lưới 1fr (thanh chọn mode) mất kích thước tối thiểu => co lại khi vừa chạm,
+    // kéo theo nút bên cạnh trượt vào dưới ngón tay nên cú bấm bị mất.
     btn.style.overflow = 'hidden';
+    btn.style.overflow = 'clip';
     btn.appendChild(ripple);
     ripple.addEventListener('animationend', () => ripple.remove());
   }, { passive: true });

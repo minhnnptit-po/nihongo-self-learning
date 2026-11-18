@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#F5F2EC" id="themeColorMeta">
-<title>Luyện tập Nihongo → Romaji</title>
+<title>Learning Nihongo</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <script>
 (function(){
   try{
@@ -18,11 +19,58 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="data.js" defer></script>
 <script src="index.js" defer></script>
 <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
+<body id="top">
+
+<div class="side-rail">
+  <a class="brand-logo" id="brandLogo" href="#top" aria-label="Về trang chủ" title="Trang chủ">
+    <img src="logo-transparent.png" alt="Logo Nihongo" width="512" height="512" draggable="false">
+  </a>
+
+  <nav class="menu-dock" id="menuDock" aria-label="Menu chính">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="topbar" title="Menu">
+      <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+
+    <div class="topbar" id="topbar">
+      <div class="mode-row" id="modeRow" data-mode="hiragana">
+        <span class="mode-thumb" aria-hidden="true"><span class="thumb-fill"></span></span>
+        <button class="mode-btn active" data-mode="hiragana" aria-pressed="true"><span class="k" lang="ja">あ</span><span>Hiragana</span></button>
+        <button class="mode-btn" data-mode="katakana" aria-pressed="false"><span class="k" lang="ja">ア</span><span>Katakana</span></button>
+        <button class="mode-btn" data-mode="teform" aria-pressed="false"><span>Thể て</span></button>
+        <button class="mode-btn" data-mode="kanji" aria-pressed="false"><span class="k" lang="ja">漢</span><span>Kanji</span></button>
+        <button class="mode-btn" data-mode="vidu" aria-pressed="false"><span class="k" lang="ja">例</span><span>Ví dụ</span></button>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+        <div class="progress-label" id="progressLabel">0 / 104 đã đúng</div>
+      </div>
+
+      <div class="controls" id="filterControls">
+        <button class="chip active" data-filter="all">Tất cả (104)</button>
+        <button class="chip" data-filter="gojuon">Bảng cơ bản (46)</button>
+        <button class="chip" data-filter="dakuten">Đục âm/Bán đục (25)</button>
+        <button class="chip" data-filter="yoon">Âm ghép Yōon (33)</button>
+        <button class="chip" data-filter="vidu">Ví dụ - Từ vựng (200)</button>
+        <button class="chip" data-filter="mix">Kanji + Kana kết hợp (50)</button>
+        <button class="chip ghost" id="toggleHide">Ẩn câu đã đúng</button>
+        <button class="chip ghost kanji-only" id="kanjiMeaning" type="button" aria-pressed="false">Ẩn nghĩa</button>
+        <button class="chip ghost kanji-only" id="kanjiShuffle" type="button">Xáo trộn</button>
+        <button class="chip reset" id="resetBtn">Làm lại từ đầu</button>
+      </div>
+
+      <div class="tf-bar" id="tfBar">
+        <button class="chip reset" id="tfRetry" type="button">Làm lại từ đầu</button>
+      </div>
+
+    </div>
+  </nav>
+</div>
 
 <div class="bg" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i></div>
 
@@ -55,41 +103,6 @@ gõ romaji.</h1>
     </div>
   </div>
 </header>
-
-<div id="dockSentinel"></div>
-
-<div class="topbar" id="topbar">
-  <div class="mode-row" id="modeRow" data-mode="hiragana">
-    <span class="mode-thumb" aria-hidden="true"><span class="thumb-fill"></span></span>
-    <button class="mode-btn active" data-mode="hiragana" aria-pressed="true"><span class="k" lang="ja">あ</span><span>Hiragana</span></button>
-    <button class="mode-btn" data-mode="katakana" aria-pressed="false"><span class="k" lang="ja">ア</span><span>Katakana</span></button>
-    <button class="mode-btn" data-mode="teform" aria-pressed="false"><span>Thể て</span></button>
-    <button class="mode-btn" data-mode="kanji" aria-pressed="false"><span class="k" lang="ja">漢</span><span>Kanji</span></button>
-    <button class="mode-btn" data-mode="vidu" aria-pressed="false"><span class="k" lang="ja">例</span><span>Ví dụ</span></button>
-  </div>
-
-  <div class="progress-wrap">
-    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-    <div class="progress-label" id="progressLabel">0 / 104 đã đúng</div>
-  </div>
-
-  <div class="controls" id="filterControls">
-    <button class="chip active" data-filter="all">Tất cả (104)</button>
-    <button class="chip" data-filter="gojuon">Bảng cơ bản (46)</button>
-    <button class="chip" data-filter="dakuten">Đục âm/Bán đục (25)</button>
-    <button class="chip" data-filter="yoon">Âm ghép Yōon (33)</button>
-    <button class="chip" data-filter="vidu">Ví dụ - Từ vựng (200)</button>
-    <button class="chip" data-filter="mix">Kanji + Kana kết hợp (50)</button>
-    <button class="chip ghost" id="toggleHide">Ẩn câu đã đúng</button>
-    <button class="chip reset" id="resetBtn">Làm lại từ đầu</button>
-  </div>
-
-  <div class="tf-bar" id="tfBar">
-    <button class="chip reset" id="tfRetry" type="button">Làm lại từ đầu</button>
-  </div>
-
-  <button class="toolbar-toggle" id="toolbarToggle"><span>Hiện thanh lọc</span><span class="chev">▾</span></button>
-</div>
 
 <main id="main-hiragana"></main>
 <main id="main-katakana" class="hidden"></main>
